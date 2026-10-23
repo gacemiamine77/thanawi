@@ -1,0 +1,69 @@
+{
+ "items": [
+  {
+   "id": "l4", "level": "3as", "subject": "math", "chapter": "الدوال الأسية واللوغاريتمية", "type": "lesson",
+   "title": "الدالة الأسية واللوغاريتم النيبيري: القواعد والنهايات", "url": "", "date": "2026-10-23",
+   "body": "<h3>القواعد</h3><div class='bx'>e<sup>a+b</sup> = e<sup>a</sup>·e<sup>b</sup> &nbsp;|&nbsp; e<sup>a−b</sup> = e<sup>a</sup>/e<sup>b</sup> &nbsp;|&nbsp; (e<sup>a</sup>)<sup>n</sup> = e<sup>na</sup><br>ln(ab) = ln a + ln b &nbsp;|&nbsp; ln(a/b) = ln a − ln b &nbsp;|&nbsp; ln(a<sup>n</sup>) = n·ln a (مع a, b &gt; 0)<br>ln(e<sup>x</sup>) = x و e<sup>ln x</sup> = x (x &gt; 0)</div><h3>معادلات ومتراجحات</h3><div class='bx'>e<sup>x</sup> = a ⇔ x = ln a (a &gt; 0)<br>ln x = a ⇔ x = e<sup>a</sup> (x &gt; 0)<br>e<sup>x</sup> &lt; e<sup>y</sup> ⇔ x &lt; y &nbsp;|&nbsp; ln x &lt; ln y ⇔ 0 &lt; x &lt; y</div><h3>النهايات المهمة</h3><div class='bx'>lim e<sup>x</sup> = +∞ عند +∞، و = 0 عند −∞<br>lim e<sup>x</sup>/x<sup>n</sup> = +∞ عند +∞ &nbsp;|&nbsp; lim x<sup>n</sup>·e<sup>x</sup> = 0 عند −∞<br>lim ln x = +∞ عند +∞ و = −∞ عند 0<sup>+</sup><br>lim (ln x)/x = 0 عند +∞ &nbsp;|&nbsp; lim x·ln x = 0 عند 0<sup>+</sup></div><h3>مثال</h3><p>حل المعادلة e<sup>2x</sup> − 3e<sup>x</sup> + 2 = 0. نضع X = e<sup>x</sup> فتصبح X² − 3X + 2 = 0، أي X = 1 أو X = 2. إذن x = 0 أو x = ln 2.</p><h3>تمرين</h3><p>حل المعادلة ln(x − 1) = 2.</p><div class='bx'><b>الحل:</b> الشرط x &gt; 1. ln(x − 1) = 2 تعني x − 1 = e²، إذن x = e² + 1 وهو يحقق الشرط.</div>"
+  },
+  {
+   "id": "l5", "level": "2as", "subject": "math", "chapter": "المعادلات والمتراجحات", "type": "lesson",
+   "title": "المعادلة من الدرجة الثانية: المميّز والحلول", "url": "", "date": "2026-10-23",
+   "body": "<h3>الحل بالمميّز</h3><div class='bx'>ax² + bx + c = 0 مع a ≠ 0، والمميّز Δ = b² − 4ac<br>Δ &gt; 0: حلان x = (−b ± √Δ) / 2a<br>Δ = 0: حل مضاعف x = −b / 2a<br>Δ &lt; 0: لا حل في مجموعة الأعداد الحقيقية</div><h3>مجموع الجذرين وجداؤهما</h3><div class='bx'>S = x<sub>1</sub> + x<sub>2</sub> = −b/a &nbsp;|&nbsp; P = x<sub>1</sub>·x<sub>2</sub> = c/a</div><h3>إشارة ثلاثي الحدود</h3><p>إذا كان Δ &gt; 0 فإشارة ax² + bx + c هي إشارة a خارج الجذرين، وعكسها بين الجذرين. وإذا كان Δ &lt; 0 فإشارتها هي إشارة a دائمًا.</p><h3>مثال</h3><p>2x² − 5x + 2 = 0: Δ = 25 − 16 = 9، إذن x = (5 ± 3)/4، أي x = 2 أو x = 1/2. التحقق: S = 5/2 و P = 1.</p><h3>تمرين</h3><p>حل x² + 2x + 5 = 0 في مجموعة الأعداد الحقيقية.</p><div class='bx'><b>الحل:</b> Δ = 4 − 20 = −16 &lt; 0، إذن لا يوجد حل حقيقي.</div>"
+  },
+  {
+   "id": "l6", "level": "1as", "subject": "math", "chapter": "الحساب الجبري", "type": "lesson",
+   "title": "المتطابقات الشهيرة والتحليل إلى جداء عوامل", "url": "", "date": "2026-10-23",
+   "body": "<h3>المتطابقات</h3><div class='bx'>(a + b)² = a² + 2ab + b²<br>(a − b)² = a² − 2ab + b²<br>a² − b² = (a − b)(a + b)</div><h3>طرق التحليل</h3><p>1) العامل المشترك: 6x² + 9x = 3x(2x + 3).<br>2) المتطابقة الشهيرة: x² − 6x + 9 = (x − 3)²، و49x² − 25 = (7x − 5)(7x + 5).</p><h3>حيلة في الحساب الذهني</h3><p>101² = (100 + 1)² = 10000 + 200 + 1 = 10201. و99 × 101 = 100² − 1 = 9999.</p><h3>تمرين</h3><p>حلل: x² − 16 و x² + 10x + 25.</p><div class='bx'><b>الحل:</b> x² − 16 = (x − 4)(x + 4). و x² + 10x + 25 = (x + 5)².</div>"
+  },
+  {
+   "id": "l7", "level": "2as", "subject": "physics", "chapter": "الميكانيك", "type": "lesson",
+   "title": "قوانين نيوتن الثلاثة", "url": "", "date": "2026-10-23",
+   "body": "<h3>القانون الأول (مبدأ العطالة)</h3><div class='bx'>إذا كان مجموع القوى المؤثرة على جسم معدومًا فإنه يبقى ساكنًا أو يتحرك حركة مستقيمة منتظمة (في معلم غاليلي).</div><h3>القانون الثاني</h3><div class='bx'>ΣF = m·a<br>الوحدات: القوة بالنيوتن (N)، الكتلة بالكيلوغرام (kg)، التسارع بـ m/s²</div><h3>القانون الثالث (الفعل ورد الفعل)</h3><div class='bx'>F<sub>A/B</sub> = − F<sub>B/A</sub> : القوتان متساويتان في الشدة ومتعاكستان في الاتجاه، وتؤثر كل منهما على جسم مختلف.</div><h3>الثقل</h3><p>P = m·g، حيث g ≈ 9.8 N/kg قرب سطح الأرض (ويؤخذ 10 غالبًا في التمارين إن ذكر ذلك).</p><h3>مثال وتمرين</h3><p>جسم كتلته 2 kg يخضع لقوة محصلة شدتها 10 N. تسارعه a = 10/2 = 5 m/s².</p><p>تمرين: ما شدة القوة المحصلة اللازمة لإكساب جسم كتلته 4 kg تسارعًا 3 m/s²؟</p><div class='bx'><b>الحل:</b> F = m·a = 4 × 3 = 12 N.</div>"
+  },
+  {
+   "id": "l8", "level": "3as", "subject": "physics", "chapter": "ثنائي القطب RC", "type": "lesson",
+   "title": "شحن وتفريغ مكثفة في دارة RC", "url": "", "date": "2026-10-23",
+   "body": "<h3>ثابت الزمن</h3><div class='bx'>τ = R·C (يقاس بالثانية عندما تكون R بالأوم و C بالفاراد)</div><h3>الشحن (توتر ثابت E)</h3><div class='bx'>u<sub>C</sub>(t) = E·(1 − e<sup>−t/τ</sup>)<br>عند t = τ يبلغ التوتر حوالي 63% من E، وعند t = 5τ يكون الشحن شبه كامل (حوالي 99%).</div><h3>التفريغ</h3><div class='bx'>u<sub>C</sub>(t) = E·e<sup>−t/τ</sup><br>عند t = τ يبقى حوالي 37% من E.</div><h3>العلاقات المفيدة</h3><div class='bx'>q = C·u<sub>C</sub> &nbsp;|&nbsp; i = dq/dt = C·du<sub>C</sub>/dt &nbsp;|&nbsp; الطاقة المخزنة: E<sub>C</sub> = ½·C·u<sub>C</sub>²</div><h3>مثال</h3><p>R = 1 kΩ و C = 100 µF: τ = 1000 × 100×10<sup>−6</sup> = 0.1 s.</p><h3>تمرين</h3><p>ما الطاقة المخزنة في مكثفة سعتها 100 µF عند توتر 10 V؟</p><div class='bx'><b>الحل:</b> E<sub>C</sub> = ½ × 100×10<sup>−6</sup> × 10² = 5×10<sup>−3</sup> J.</div>"
+  },
+  {
+   "id": "l9", "level": "3as", "subject": "science", "chapter": "تركيب البروتين", "type": "lesson",
+   "title": "تركيب البروتين: الاستنساخ والترجمة", "url": "", "date": "2026-10-23",
+   "body": "<h3>المرحلتان</h3><p><b>الاستنساخ</b> يحدث داخل النواة: يُنسخ أحد شريطي الـ ADN (الشريط المستنسخ) بواسطة أنزيم ARN بوليميراز، فينتج ARN رسول (ARNm).<br><b>الترجمة</b> تحدث في الهيولى على الريبوزومات: يُقرأ الـ ARNm ثلاثيةً ثلاثيةً، وتجلب ARN الناقلة الأحماض الأمينية المناسبة.</p><h3>الرامزة والشفرة الوراثية</h3><div class='bx'>الرامزة (codon) = ثلاثة نيوكليوتيدات على الـ ARNm.<br>رامزة البدء: AUG (تقابل الميثيونين).<br>رامزات التوقف: UAA و UAG و UGA.<br>الشفرة الوراثية شاملة (عامة عند الكائنات الحية) ومتعددة (عدة رامزات للحمض الأميني الواحد).</div><h3>قاعدة الازدواج</h3><p>في الاستنساخ: A مع U، و T مع A، و G مع C، و C مع G (الأول من الـ ADN والثاني من الـ ARN).</p><h3>مثال</h3><p>الشريط المستنسخ TAC GGT ينتج الـ ARNm التالي: AUG CCA، أي الميثيونين ثم البرولين.</p><h3>تمرين</h3><p>ما الـ ARNm الناتج عن الشريط المستنسخ TAC CTT؟</p><div class='bx'><b>الحل:</b> AUG GAA (ميثيونين ثم حمض الغلوتاميك).</div>"
+  },
+  {
+   "id": "l10", "level": "3as", "subject": "french", "chapter": "Expression écrite", "type": "lesson",
+   "title": "L'argumentation : thèse, arguments et connecteurs", "url": "", "date": "2026-10-23",
+   "body": "<div dir='ltr' lang='fr' style='text-align:left'><h3>Structure d'un texte argumentatif</h3><div class='bx'>1) Introduction : sujet posé + problématique<br>2) Développement : thèse + arguments + exemples<br>3) Conclusion : bilan + ouverture</div><h3>Connecteurs logiques</h3><div class='bx'>Addition : de plus, en outre, par ailleurs<br>Opposition : mais, cependant, pourtant, en revanche<br>Cause : car, parce que, puisque<br>Conséquence : donc, c'est pourquoi, par conséquent<br>Concession : bien que (+ subjonctif), même si</div><h3>Exemple</h3><p>Thèse : Les réseaux sociaux isolent les jeunes.<br>Argument : ils remplacent les rencontres réelles.<br>Exemple : un adolescent passe des heures en ligne mais voit rarement ses amis.</p><h3>Conseil</h3><p>Un argument + un exemple par paragraphe, avec un connecteur au début de chaque paragraphe.</p></div>"
+  },
+  {
+   "id": "l11", "level": "3as", "subject": "english", "chapter": "Grammar", "type": "lesson",
+   "title": "Conditional sentences (types 0, 1, 2, 3)", "url": "", "date": "2026-10-23",
+   "body": "<div dir='ltr' lang='en' style='text-align:left'><h3>The four types</h3><div class='bx'><b>Type 0</b> (general truths): If + present simple, present simple.<br>If you heat ice, it melts.<br><b>Type 1</b> (real/possible future): If + present simple, will + base verb.<br>If it rains, we will stay home.<br><b>Type 2</b> (unreal present): If + past simple, would + base verb.<br>If I had money, I would travel.<br><b>Type 3</b> (unreal past): If + past perfect, would have + past participle.<br>If she had studied, she would have passed.</div><h3>Remember</h3><p>In type 2, we use were for all persons: If I were you, I would apologize.</p><h3>Exercise</h3><p>Complete: If he (work) harder, he would have succeeded.</p><div class='bx'><b>Answer:</b> had worked.</div></div>"
+  },
+  {
+   "id": "l12", "level": "3as", "subject": "arabic", "chapter": "علوم اللغة", "type": "lesson",
+   "title": "الأساليب الإنشائية: الأمر والنهي والاستفهام والنداء والتمني", "url": "", "date": "2026-10-23",
+   "body": "<h3>الأمر</h3><p>طلب فعل على وجه الاستعلاء. صيغه: فعل الأمر (اكتب)، المضارع المقرون بلام الأمر (لِيَكتبْ)، اسم فعل الأمر (صَهْ)، المصدر النائب عن فعله (صبرًا).</p><h3>النهي</h3><p>طلب الكف عن فعل، وصيغته: لا + المضارع المجزوم. مثال: لا تُهمِلْ دروسَك.</p><h3>الاستفهام</h3><p>طلب الفهم. أدواته: الهمزة، هل، من، ما، متى، أين، كيف، كم، أيّ.</p><h3>النداء</h3><p>طلب الإقبال. أدواته: يا، أيا، هيا، أي، والهمزة. مثال: يا طالبَ العلمِ اجتهدْ.</p><h3>التمني</h3><p>طلب أمر محبوب لا يرجى حصوله أو يصعب. أداته الأصلية: ليت. مثال: ليتَ الشبابَ يعودُ يومًا.</p><h3>تدريب</h3><p>عيّن نوع الأسلوب: «هل أنجزتَ واجبك؟»</p><div class='bx'><b>الجواب:</b> استفهام، وأداته «هل».</div>"
+  },
+  {
+   "id": "l13", "level": "3as", "subject": "philo", "chapter": "منهجية المقالة", "type": "lesson",
+   "title": "منهجية المقالة الجدلية في الفلسفة", "url": "", "date": "2026-10-23",
+   "body": "<h3>الخطوات</h3><div class='bx'><b>1) المقدمة:</b> تمهيد من الواقع أو من الفكر، ثم طرح المشكلة بسؤال واضح.<br><b>2) العرض:</b><br>• الأطروحة: الموقف الأول مع حججه وأمثلته وأسماء أصحابه.<br>• نقيض الأطروحة: الموقف المعاكس بحججه.<br>• النقد أو التركيب: بيان قوة كل موقف وحدوده، وتجاوزهما بموقف مركّب.<br><b>3) الخاتمة:</b> حل للمشكلة وإجابة عن السؤال المطروح.</div><h3>نصائح</h3><p>استخدم روابط منطقية بين الأفكار (لكن، غير أن، وبالتالي، ومن هنا). تجنب الحشو، وركّز على الحجة المدعمة بمثال.</p><h3>مثال على صياغة المشكلة</h3><p>«هل الحرية مطلقة أم مقيدة بالقانون؟» وتُصاغ بحيث تظهر فيها الأطروحتان المتعارضتان.</p>"
+  },
+  {
+   "id": "l14", "level": "3as", "subject": "history", "chapter": "الثورة التحريرية", "type": "lesson",
+   "title": "محطات أساسية من الثورة التحريرية الجزائرية (1954-1962)", "url": "", "date": "2026-10-23",
+   "body": "<h3>محطات مفصلية</h3><div class='bx'>8 ماي 1945: مجازر سطيف وقالمة وخراطة.<br>1 نوفمبر 1954: اندلاع الثورة وصدور بيان أول نوفمبر.<br>20 أوت 1955: هجومات الشمال القسنطيني.<br>20 أوت 1956: مؤتمر الصومام وتنظيم هياكل الثورة.<br>11 ديسمبر 1960: مظاهرات شعبية عمّت المدن الجزائرية.<br>17 أكتوبر 1961: مظاهرات الجزائريين في باريس.<br>19 مارس 1962: وقف إطلاق النار بعد اتفاقيات إيفيان.<br>5 جويلية 1962: استقلال الجزائر.</div><h3>فكرتان للحفظ</h3><p>كان الهدف المعلن في بيان أول نوفمبر استعادة الدولة الجزائرية السيادة الكاملة. وتميّزت الثورة بالجمع بين الكفاح المسلح والعمل السياسي والدبلوماسي.</p>"
+  },
+  {
+   "id": "l15", "level": "3as", "subject": "math", "chapter": "تمارين محلولة", "type": "exercise",
+   "title": "تمارين مراجعة: الاشتقاق والنهايات واللوغاريتم", "url": "", "date": "2026-10-23",
+   "body": "<h3>التمرين 1</h3><p>f(x) = x³ − 3x + 1. ادرس اتجاه تغير f.</p><div class='bx'><b>الحل:</b> f'(x) = 3x² − 3 = 3(x − 1)(x + 1). f متزايدة على ]−∞ ; −1] وعلى [1 ; +∞[، ومتناقصة على [−1 ; 1]. قيمة حدية عظمى محلية f(−1) = 3، وصغرى محلية f(1) = −1.</div><h3>التمرين 2</h3><p>احسب نهاية (2n + 1)/(n + 3) عندما تؤول n إلى +∞.</p><div class='bx'><b>الحل:</b> بقسمة البسط والمقام على n نجد (2 + 1/n)/(1 + 3/n) وهي تؤول إلى 2.</div><h3>التمرين 3</h3><p>حل المعادلة ln(x − 1) = 2.</p><div class='bx'><b>الحل:</b> x &gt; 1 و x − 1 = e²، إذن x = e² + 1.</div>"
+  },
+  {
+   "id": "l16", "level": "3as", "subject": "math", "chapter": "نماذج اختبارات", "type": "exam",
+   "title": "نموذج اختبار في الرياضيات (من إعدادي، للتدريب)", "url": "", "date": "2026-10-23",
+   "body": "<h3>التمرين الأول</h3><p>(u<sub>n</sub>) متتالية حيث u<sub>0</sub> = 1 و u<sub>n+1</sub> = 2u<sub>n</sub> + 3. نضع v<sub>n</sub> = u<sub>n</sub> + 3.<br>1) بيّن أن (v<sub>n</sub>) هندسية يطلب تعيين أساسها وحدها الأول.<br>2) اكتب u<sub>n</sub> بدلالة n.</p><div class='bx'><b>الحل:</b> v<sub>n+1</sub> = u<sub>n+1</sub> + 3 = 2u<sub>n</sub> + 6 = 2v<sub>n</sub>، إذن الأساس 2 والحد الأول v<sub>0</sub> = 4. ومنه v<sub>n</sub> = 4·2<sup>n</sup>، و u<sub>n</sub> = 4·2<sup>n</sup> − 3. (التحقق: u<sub>1</sub> = 5.)</div><h3>التمرين الثاني</h3><p>z = 1 + i√3. اكتب z على الشكل المثلثي ثم احسب z<sup>6</sup>.</p><div class='bx'><b>الحل:</b> |z| = 2 و arg z = π/3، إذن z = 2(cos π/3 + i sin π/3). z<sup>6</sup> = 2<sup>6</sup>(cos 2π + i sin 2π) = 64.</div><h3>التمرين الثالث</h3><p>f(x) = ln x − x + 1 على ]0 ; +∞[. بيّن أن ln x ≤ x − 1.</p><div class='bx'><b>الحل:</b> f'(x) = 1/x − 1، وهي موجبة على ]0 ; 1[ وسالبة على ]1 ; +∞[. إذن f تبلغ قيمتها العظمى f(1) = 0، فـ f(x) ≤ 0، أي ln x ≤ x − 1.</div>"
+  }
+ ]
+}

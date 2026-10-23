@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>لوحة الإدارة</title>
+<style>
+:root{--bg:#f3f7f4;--c:#fff;--t:#14231b;--m:#5d6f64;--p:#0b6b3a;--r:#c8322b;--b:#d9e4dc}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1511;--c:#15201a;--t:#e6efe9;--m:#93a79b;--p:#4cc98a;--r:#ff7a70;--b:#26372d}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
+main{max-width:720px;margin:auto;padding:1rem}
+h1{color:var(--p)}
+section{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:1rem;margin-bottom:1rem}
+h2{margin:0 0 .6rem;font-size:1.1rem}
+label{display:block;margin:.6rem 0 .2rem;font-size:.9rem;color:var(--m)}
+input,select{width:100%;padding:.6rem;border:1px solid var(--b);border-radius:6px;background:var(--bg);color:var(--t);font:inherit}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--p);outline-offset:2px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+button{margin-top:.8rem;padding:.65rem 1.2rem;border:0;border-radius:6px;background:var(--p);color:var(--bg);font:inherit;font-weight:700;cursor:pointer}
+button.d{background:var(--r);margin:0;padding:.3rem .7rem;font-size:.8rem}
+#msg{min-height:1.5rem;font-weight:700}
+.it{display:flex;justify-content:space-between;align-items:center;gap:.5rem;border-top:1px solid var(--b);padding:.5rem 0;font-size:.9rem}
+small{color:var(--m)}
+</style>
+</head>
+<body>
+<main>
+<h1>لوحة إدارة الموقع</h1>
+<section>
+<h2>1. الاتصال بـ GitHub</h2>
+<div class="row">
+<div><label>اسم حساب GitHub</label><input id="owner" dir="ltr"></div>
+<div><label>اسم المستودع</label><input id="repo" dir="ltr"></div>
+</div>
+<div class="row">
+<div><label>الفرع</label><input id="branch" dir="ltr"></div>
+<div><label>Token</label><input id="token" type="password" dir="ltr" autocomplete="off"></div>
+</div>
+<small>يُحفظ الـ Token في متصفحك فقط. استخدم Fine-grained token لهذا المستودع فقط بصلاحية Contents: Read and write.</small><br>
+<button id="conn">اتصال</button>
+</section>
+<section id="add" hidden>
+<h2>2. إضافة محتوى</h2>
+<div class="row">
+<div><label>المستوى</label><select id="level"></select></div>
+<div><label>المادة</label><select id="subject"></select></div>
+</div>
+<div class="row">
+<div><label>الفصل / الوحدة</label><input id="chapter" placeholder="مثال: الدوال العددية"></div>
+<div><label>النوع</label>
+<select id="type"><option value="lesson">درس</option><option value="video">فيديو</option><option value="exercise">تمارين</option><option value="exam">امتحان</option></select></div>
+</div>
+<label>العنوان</label><input id="title">
+<label>رابط يوتيوب (للفيديو)</label><input id="link" dir="ltr" placeholder="https://youtu.be/...">
+<label>أو ملف (PDF، صورة، فيديو mp4 - حتى 50 ميغابايت)</label><input id="file" type="file">
+<button id="pub">نشر</button>
+<p id="msg" role="status"></p>
+</section>
+<section id="list" hidden><h2>3. المحتوى المنشور</h2><div id="items"></div></section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const S=JSON.parse(localStorage.getItem('cfg')||'{}');
+const m=location.hostname.match(/^(.+)\.github\.io$/);
+$('owner').value=S.owner||(m?m[1]:'');
+$('repo').value=S.repo||location.pathname.split('/')[1]||'';
+$('branch').value=S.branch||'main';
+$('token').value=S.token||'';
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const api=p=>'https://api.github.com/repos/'+$('owner').value.trim()+'/'+$('repo').value.trim()+'/contents/'+p;
+const H=()=>({Authorization:'Bearer '+$('token').value.trim(),Accept:'application/vnd.github+json'});
+const b64=s=>btoa(unescape(encodeURIComponent(s)));
+const msg=(t,e)=>{$('msg').textContent=t;$('msg').style.color=e?'var(--r)':'var(--p)'};
+let DB=null;
+
+async function getDB(){
+  const r=await fetch(api('data/content.json')+'?ref='+$('branch').value.trim()+'&t='+Date.now(),{headers:H()});
+  if(!r.ok)throw Error('تعذر قراءة data/content.json. تحقق من الاسم والمستودع والـ Token.');
+  const j=await r.json();
+  return{sha:j.sha,db:JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))))};
+}
+async function putFile(path,content,note,sha){
+  const body={message:note,content,branch:$('branch').value.trim()};
+  if(sha)body.sha=sha;
+  const r=await fetch(api(path),{method:'PUT',headers:H(),body:JSON.stringify(body)});
+  if(!r.ok)throw Error('فشل الحفظ: '+((await r.json()).message||r.status));
+}
+const saveDB=(db,sha,note)=>putFile('data/content.json',b64(JSON.stringify(db,null,1)),note,sha);
+
+function show(){
+  const opt=a=>a.map(x=>'<option value="'+esc(x.id)+'">'+esc(x.name)+'</option>').join('');
+  $('level').innerHTML=opt(DB.db.levels);
+  $('subject').innerHTML=opt(DB.db.subjects);
+  $('add').hidden=$('list').hidden=false;
+  $('items').innerHTML=DB.db.items.length?DB.db.items.slice().reverse().map(i=>
+    '<div class="it"><span>'+esc(i.title)+'<br><small>'+esc(i.chapter)+' - '+esc(i.type)+'</small></span><button class="d" data-id="'+esc(i.id)+'">حذف</button></div>'
+  ).join(''):'<small>لا يوجد محتوى بعد.</small>';
+}
+$('conn').onclick=async()=>{
+  localStorage.setItem('cfg',JSON.stringify({owner:$('owner').value.trim(),repo:$('repo').value.trim(),branch:$('branch').value.trim(),token:$('token').value.trim()}));
+  try{DB=await getDB();show();msg('تم الاتصال بنجاح')}catch(e){alert(e.message)}
+};
+$('pub').onclick=async()=>{
+  const f=$('file').files[0],link=$('link').value.trim(),title=$('title').value.trim(),chapter=$('chapter').value.trim();
+  if(!title||!chapter)return msg('أدخل العنوان والفصل',1);
+  if(!f&&!link)return msg('أضف رابط يوتيوب أو اختر ملفًا',1);
+  if(f&&f.size>50*1024*1024)return msg('الملف أكبر من 50 ميغابايت. ارفعه على يوتيوب واستعمل الرابط.',1);
+  $('pub').disabled=true;
+  try{
+    let url=link;
+    if(f){
+      msg('جارٍ رفع الملف...');
+      const data=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result.split(',')[1]);r.onerror=no;r.readAsDataURL(f)});
+      const ext=(f.name.split('.').pop()||'bin').toLowerCase().replace(/[^a-z0-9]/g,'');
+      url='files/'+Date.now()+'.'+ext;
+      await putFile(url,data,'Add file '+url);
+    }
+    msg('جارٍ تحديث القائمة...');
+    DB=await getDB();
+    DB.db.items.push({id:Date.now().toString(36),level:$('level').value,subject:$('subject').value,chapter,type:$('type').value,title,url,date:new Date().toISOString().slice(0,10)});
+    await saveDB(DB.db,DB.sha,'Add: '+title);
+    DB=await getDB();show();
+    $('title').value=$('link').value=$('file').value='';
+    msg('تم النشر. سيظهر في الموقع خلال دقيقة أو دقيقتين.');
+  }catch(e){msg(e.message,1)}
+  $('pub').disabled=false;
+};
+$('items').onclick=async e=>{
+  const id=e.target.dataset.id;
+  if(!id||!confirm('حذف هذا العنصر من الموقع؟'))return;
+  try{
+    DB=await getDB();
+    DB.db.items=DB.db.items.filter(i=>i.id!==id);
+    await saveDB(DB.db,DB.sha,'Remove item');
+    DB=await getDB();show();msg('تم الحذف');
+  }catch(er){msg(er.message,1)}
+};
+</script>
+</body>
+</html>

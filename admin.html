@@ -4,139 +4,287 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
-<title>لوحة الإدارة</title>
+<title>Thanawi — لوحة الإدارة / Administration</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
-:root{--bg:#f3f7f4;--c:#fff;--t:#14231b;--m:#5d6f64;--p:#0b6b3a;--r:#c8322b;--b:#d9e4dc}
-@media(prefers-color-scheme:dark){:root{--bg:#0d1511;--c:#15201a;--t:#e6efe9;--m:#93a79b;--p:#4cc98a;--r:#ff7a70;--b:#26372d}}
+:root{--bg:#f2f6f3;--c:#fff;--t:#15241b;--m:#5d6f64;--p:#0b6b3a;--r:#c8322b;--b:#dbe5de;--sol:#eaf5ee}
+@media(prefers-color-scheme:dark){:root{--bg:#0c1410;--c:#14211a;--t:#e7f0ea;--m:#9db3a6;--p:#3fc982;--r:#ff7a70;--b:#24382d;--sol:#122a1e}}
 *{box-sizing:border-box}
-body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
-main{max-width:720px;margin:auto;padding:1rem}
-h1{color:var(--p)}
-section{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:1rem;margin-bottom:1rem}
-h2{margin:0 0 .6rem;font-size:1.1rem}
+body{margin:0;font-family:Tajawal,Tahoma,Arial,sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
+main{max-width:780px;margin:auto;padding:1rem}
+h1{color:var(--p);font-size:1.5rem}
+section{background:var(--c);border:1px solid var(--b);border-radius:10px;padding:1rem;margin-bottom:1rem}
+h2{margin:0 0 .6rem;font-size:1.08rem}
 label{display:block;margin:.6rem 0 .2rem;font-size:.9rem;color:var(--m)}
-input,select{width:100%;padding:.6rem;border:1px solid var(--b);border-radius:6px;background:var(--bg);color:var(--t);font:inherit}
-input:focus,select:focus,button:focus-visible{outline:2px solid var(--p);outline-offset:2px}
+input,select,textarea{width:100%;padding:.6rem;border:1px solid var(--b);border-radius:7px;background:var(--bg);color:var(--t);font:inherit}
+textarea{min-height:90px;resize:vertical}
+:focus-visible{outline:2px solid var(--p);outline-offset:2px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
-button{margin-top:.8rem;padding:.65rem 1.2rem;border:0;border-radius:6px;background:var(--p);color:var(--bg);font:inherit;font-weight:700;cursor:pointer}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+button{margin-top:.8rem;padding:.65rem 1.2rem;border:0;border-radius:7px;background:var(--p);color:#fff;font:inherit;font-weight:700;cursor:pointer}
+button.sec{background:var(--c);color:var(--t);border:1px solid var(--b)}
 button.d{background:var(--r);margin:0;padding:.3rem .7rem;font-size:.8rem}
+button.e{background:var(--c);color:var(--p);border:1px solid var(--b);margin:0;padding:.3rem .7rem;font-size:.8rem}
+button:disabled{opacity:.55;cursor:wait}
 #msg{min-height:1.5rem;font-weight:700}
 .it{display:flex;justify-content:space-between;align-items:center;gap:.5rem;border-top:1px solid var(--b);padding:.5rem 0;font-size:.9rem}
 small{color:var(--m)}
+.warn{background:#fff7e0;border:1px solid #e8cf8a;border-radius:7px;padding:.5rem .7rem;font-size:.88rem}
+@media(prefers-color-scheme:dark){.warn{background:#2a2108;border-color:#6b5716}}
+.chk{display:flex;gap:.4rem;align-items:center;margin-top:.5rem}
+.chk input{width:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap}
+.top a{color:var(--p)}
+details{margin-top:.6rem}summary{cursor:pointer;color:var(--p);font-weight:700}
 </style>
 </head>
 <body>
 <main>
-<h1>لوحة إدارة الموقع</h1>
+<div class="top">
+  <h1 data-t="title">🎓 لوحة إدارة Thanawi</h1>
+  <span>
+    <button class="sec" type="button" id="langAr">العربية</button>
+    <button class="sec" type="button" id="langFr">Français</button>
+    <a href="index.html" data-t="view">معاينة الموقع ←</a>
+  </span>
+</div>
+
 <section>
-<h2>1. الاتصال بـ GitHub</h2>
+<h2 data-t="s1">1. الاتصال بـ GitHub</h2>
 <div class="row">
-<div><label>اسم حساب GitHub</label><input id="owner" dir="ltr"></div>
-<div><label>اسم المستودع</label><input id="repo" dir="ltr"></div>
+<div><label data-t="owner">اسم حساب GitHub</label><input id="owner" dir="ltr" autocomplete="off"></div>
+<div><label data-t="repo">اسم المستودع</label><input id="repo" dir="ltr" autocomplete="off"></div>
 </div>
 <div class="row">
-<div><label>الفرع</label><input id="branch" dir="ltr"></div>
+<div><label data-t="branch">الفرع</label><input id="branch" dir="ltr" autocomplete="off"></div>
 <div><label>Token</label><input id="token" type="password" dir="ltr" autocomplete="off"></div>
 </div>
-<small>يُحفظ الـ Token في متصفحك فقط. استخدم Fine-grained token لهذا المستودع فقط بصلاحية Contents: Read and write.</small><br>
-<button id="conn">اتصال</button>
-</section>
-<section id="add" hidden>
-<h2>2. إضافة محتوى</h2>
-<div class="row">
-<div><label>المستوى</label><select id="level"></select></div>
-<div><label>المادة</label><select id="subject"></select></div>
-</div>
-<div class="row">
-<div><label>الفصل / الوحدة</label><input id="chapter" placeholder="مثال: الدوال العددية"></div>
-<div><label>النوع</label>
-<select id="type"><option value="lesson">درس</option><option value="video">فيديو</option><option value="exercise">تمارين</option><option value="exam">امتحان</option></select></div>
-</div>
-<label>العنوان</label><input id="title">
-<label>رابط يوتيوب (للفيديو)</label><input id="link" dir="ltr" placeholder="https://youtu.be/...">
-<label>أو ملف (PDF، صورة، فيديو mp4 - حتى 50 ميغابايت)</label><input id="file" type="file">
-<button id="pub">نشر</button>
+<label class="chk"><input type="checkbox" id="remember"> <span data-t="remember">تذكّر الـ Token على هذا الجهاز (غير مستحسن على جهاز مشترك)</span></label>
+<p class="warn" data-t="warnTok">🔒 استخدم Fine-grained token خاصًا بهذا المستودع فقط، بصلاحية «Contents: Read and write». بدون خيار «التذكّر» يُحفظ الرمز في جلسة المتصفح فقط ويختفي عند إغلاقه. لا تشارك الرمز ولا ترفعه في أي ملف.</p>
+<button id="conn" data-t="connect">اتصال</button>
 <p id="msg" role="status"></p>
 </section>
-<section id="list" hidden><h2>3. المحتوى المنشور</h2><div id="items"></div></section>
+
+<section id="add" hidden>
+<h2><span data-t="s2">2. إضافة / تعديل مورد</span> <small id="editing"></small></h2>
+<div class="row">
+<div><label data-t="level">المستوى</label><select id="level"></select></div>
+<div><label data-t="subject">المادة</label><select id="subject"></select></div>
+</div>
+<div class="row">
+<div><label data-t="stream">الشعبة</label><select id="stream"></select></div>
+<div><label data-t="type">النوع</label>
+<select id="type">
+  <option value="lesson" data-t="tyLesson">درس</option>
+  <option value="exercise" data-t="tyEx">تمارين</option>
+  <option value="exam" data-t="tyExam">موضوع امتحان</option>
+  <option value="video" data-t="tyVideo">فيديو</option>
+  <option value="summary" data-t="tySum">ملخص</option>
+  <option value="book" data-t="tyBook">كتاب</option>
+</select></div>
+</div>
+<div class="row">
+<div><label data-t="chapter">الفصل / الوحدة</label><input id="chapter" placeholder="مثال: الدوال العددية"></div>
+<div><label data-t="lang">لغة المورد</label>
+<select id="clang"><option value="ar">العربية</option><option value="fr">Français</option><option value="en">English</option></select></div>
+</div>
+<label data-t="ttl">العنوان *</label><input id="title">
+<label data-t="desc">وصف قصير (يظهر في البطاقة)</label><input id="desc">
+<details>
+<summary data-t="bodyT">نص الدرس على الخط (HTML بسيط — اختياري)</summary>
+<label data-t="bodyH">يمكنك استعمال: &lt;h3&gt;عنوان&lt;/h3&gt; &lt;p&gt;نص&lt;/p&gt; &lt;div class='bx'&gt;إطار مهم&lt;/div&gt; &lt;b&gt;عريض&lt;/b&gt;</label>
+<textarea id="body" dir="auto" placeholder="<h3>...</h3><p>...</p>"></textarea>
+</details>
+<label data-t="link">رابط يوتيوب (للفيديو) أو رابط ملف خارجي</label><input id="link" dir="ltr" placeholder="https://youtu.be/...">
+<label data-t="file">أو ملف (PDF, DOCX, EPUB, PPT, ZIP, MP4, صورة — الأفضل أقل من 25 ميغابايت؛ للفيديو الكبير استعمل يوتيوب)</label>
+<input id="file" type="file" accept=".pdf,.doc,.docx,.epub,.ppt,.pptx,.zip,.mp4,.webm,.png,.jpg,.jpeg,.gif">
+<details>
+<summary data-t="solT">✅ الحل / التصحيح (اختياري — يظهر للطالب عند الطلب)</summary>
+<label data-t="solTxt">نص الحل (HTML بسيط، سيُغلَّف بإطار)</label>
+<textarea id="solution" dir="auto" placeholder="الحل: ..."></textarea>
+<label data-t="solFile">أو ملف حل (PDF مثلًا) / رابط خارجي</label>
+<input id="solfile" type="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">
+<input id="sollink" dir="ltr" placeholder="https://... (اختياري)" style="margin-top:.4rem">
+</details>
+<label data-t="dur">المدة (اختياري، مثال: 12 min أو 1 h)</label><input id="duration" dir="ltr">
+<button id="pub" data-t="publish">نشر</button>
+<button id="cancelEdit" class="sec" hidden data-t="cancel">إلغاء التعديل</button>
+</section>
+
+<section id="list" hidden>
+<h2 data-t="s3">3. الموارد المنشورة</h2>
+<input id="filter" type="search" data-t-ph="filterPh" placeholder="تصفية بالعنوان…">
+<div id="items"></div>
+</section>
 </main>
+
 <script>
+"use strict";
 const $=id=>document.getElementById(id);
-const S=JSON.parse(localStorage.getItem('cfg')||'{}');
-const m=location.hostname.match(/^(.+)\.github\.io$/);
-$('owner').value=S.owner||(m?m[1]:'');
-$('repo').value=S.repo||location.pathname.split('/')[1]||'';
-$('branch').value=S.branch||'main';
-$('token').value=S.token||'';
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const api=p=>'https://api.github.com/repos/'+$('owner').value.trim()+'/'+$('repo').value.trim()+'/contents/'+p;
-const H=()=>({Authorization:'Bearer '+$('token').value.trim(),Accept:'application/vnd.github+json'});
-const b64=s=>btoa(unescape(encodeURIComponent(s)));
-const msg=(t,e)=>{$('msg').textContent=t;$('msg').style.color=e?'var(--r)':'var(--p)'};
-let DB=null;
+const L={
+ar:{title:"🎓 لوحة إدارة Thanawi",view:"معاينة الموقع ←",s1:"1. الاتصال بـ GitHub",owner:"اسم حساب GitHub",repo:"اسم المستودع",branch:"الفرع",remember:"تذكّر الـ Token على هذا الجهاز (غير مستحسن على جهاز مشترك)",warnTok:"🔒 استخدم Fine-grained token خاصًا بهذا المستودع فقط، بصلاحية «Contents: Read and write». بدون خيار «التذكّر» يُحفظ الرمز في جلسة المتصفح فقط ويختفي عند إغلاقه. لا تشارك الرمز ولا ترفعه في أي ملف.",connect:"اتصال",s2:"2. إضافة / تعديل مورد",level:"المستوى",subject:"المادة",stream:"الشعبة",type:"النوع",tyLesson:"درس",tyEx:"تمارين",tyExam:"موضوع امتحان",tyVideo:"فيديو",tySum:"ملخص",tyBook:"كتاب",chapter:"الفصل / الوحدة",lang:"لغة المورد",ttl:"العنوان *",desc:"وصف قصير (يظهر في البطاقة)",bodyT:"نص الدرس على الخط (HTML بسيط — اختياري)",bodyH:"يمكنك استعمال: <h3>عنوان</h3> <p>نص</p> <div class='bx'>إطار مهم</div> <b>عريض</b>",link:"رابط يوتيوب (للفيديو) أو رابط ملف خارجي",file:"أو ملف (PDF, DOCX, EPUB, PPT, ZIP, MP4, صورة — الأفضل أقل من 25 ميغابايت؛ للفيديو الكبير استعمل يوتيوب)",solT:"✅ الحل / التصحيح (اختياري — يظهر للطالب عند الطلب)",solTxt:"نص الحل (HTML بسيط، سيُغلَّف بإطار إذا لم يبدأ بوسم)",solFile:"أو ملف حل (PDF مثلًا) / رابط خارجي",dur:"المدة (اختياري، مثال: 12 min أو 1 h)",publish:"نشر",cancel:"إلغاء التعديل",s3:"3. الموارد المنشورة",filterPh:"تصفية بالعنوان…",edit:"تعديل",del:"حذف",editing:"(تعديل: ",empty:"لا يوجد محتوى بعد.",okConn:"تم الاتصال بنجاح ✓",okPub:"تم النشر. سيظهر في الموقع خلال دقيقة أو دقيقتين (GitHub Pages).",okDel:"تم الحذف.",okEdit:"تم الحفظ.",needTitle:"أدخل العنوان على الأقل.",needContent:"أضف نص درس، أو رابطًا، أو ملفًا.",tooBig:"الملف كبير جدًا (> 25 ميغابايت). للفيديو: ارفعه على يوتيوب وضع الرابط.",uploading:"جارٍ الرفع…",saving:"جارٍ الحفظ…",confirmDel:"حذف هذا المورد من الموقع؟ (يبقى الملف في المستودع)",errDB:"تعذر قراءة data/content.json. تحقق من الحساب والمستودع والفرع والـ Token.",createDB:"الملف data/content.json غير موجود. إنشاؤه بهيكل فارغ الآن؟"},
+fr:{title:"🎓 Administration Thanawi",view:"Voir le site →",s1:"1. Connexion à GitHub",owner:"Compte GitHub",repo:"Dépôt",branch:"Branche",remember:"Se souvenir du Token sur cet appareil (déconseillé sur un appareil partagé)",warnTok:"🔒 Utilisez un Fine-grained token limité à ce seul dépôt, avec la permission « Contents: Read and write ». Sans l'option « se souvenir », le token reste dans la session du navigateur. Ne le partagez ni ne le commitez jamais.",connect:"Se connecter",s2:"2. Ajouter / modifier une ressource",level:"Niveau",subject:"Matière",stream:"Filière",type:"Type",tyLesson:"Cours",tyEx:"Exercices",tyExam:"Sujet d'examen",tyVideo:"Vidéo",tySum:"Résumé",tyBook:"Livre",chapter:"Chapitre / unité",lang:"Langue de la ressource",ttl:"Titre *",desc:"Courte description (affichée sur la carte)",bodyT:"Texte du cours en ligne (HTML simple — optionnel)",bodyH:"Vous pouvez utiliser : <h3>titre</h3> <p>texte</p> <div class='bx'>encadré</div> <b>gras</b>",link:"Lien YouTube (vidéo) ou lien de fichier externe",file:"Ou fichier (PDF, DOCX, EPUB, PPT, ZIP, MP4, image — de préférence < 25 Mo ; pour les grosses vidéos, utilisez YouTube)",solT:"✅ Solution / corrigé (optionnel — révélé à la demande)",solTxt:"Texte de la solution (HTML simple, encadré automatiquement si besoin)",solFile:"Ou fichier corrigé (PDF…) / lien externe",dur:"Durée (optionnel, ex. : 12 min, 1 h)",publish:"Publier",cancel:"Annuler la modification",s3:"3. Ressources publiées",filterPh:"Filtrer par titre…",edit:"Modifier",del:"Supprimer",editing:"(modification : ",empty:"Aucun contenu pour l'instant.",okConn:"Connecté avec succès ✓",okPub:"Publié. Visible sur le site dans 1 à 2 minutes (GitHub Pages).",okDel:"Supprimé.",okEdit:"Enregistré.",needTitle:"Entrez au moins le titre.",needContent:"Ajoutez un texte de cours, un lien ou un fichier.",tooBig:"Fichier trop gros (> 25 Mo). Pour une vidéo : YouTube + lien.",uploading:"Envoi en cours…",saving:"Enregistrement…",confirmDel:"Supprimer cette ressource du site ? (le fichier reste dans le dépôt)",errDB:"Lecture de data/content.json impossible. Vérifiez compte, dépôt, branche et Token.",createDB:"data/content.json est introuvable. Le créer maintenant avec une structure vide ?"}};
+let lang=localStorage.getItem("thanawi-admin-lang")||"ar";
+const t=k=>L[lang][k]||k;
+function applyLang(){
+  document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-t]").forEach(e=>{const k=e.dataset.t;e.textContent=t(k)});
+  document.querySelectorAll("[data-t-ph]").forEach(e=>e.placeholder=t(e.dataset.tPh));
+}
+$("langAr").onclick=()=>{lang="ar";localStorage.setItem("thanawi-admin-lang",lang);applyLang();if(DB)show()};
+$("langFr").onclick=()=>{lang="fr";localStorage.setItem("thanawi-admin-lang",lang);applyLang();if(DB)show()};
+
+/* ---- config ---- */
+const store=JSON.parse(localStorage.getItem("thanawi-cfg")||sessionStorage.getItem("thanawi-cfg")||"{}");
+const hostM=location.hostname.match(/^(.+)\.github\.io$/);
+$("owner").value=store.owner||(hostM?hostM[1]:"");
+$("repo").value=store.repo||location.pathname.split("/")[1]||"";
+$("branch").value=store.branch||"main";
+$("token").value=store.token||"";
+$("remember").checked=!!localStorage.getItem("thanawi-cfg");
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const api=p=>"https://api.github.com/repos/"+encodeURIComponent($("owner").value.trim())+"/"+encodeURIComponent($("repo").value.trim())+"/contents/"+p;
+const H=()=>({Authorization:"Bearer "+$("token").value.trim(),Accept:"application/vnd.github+json"});
+function b64txt(s){const b=new TextEncoder().encode(s);let bin="";b.forEach(x=>bin+=String.fromCharCode(x));return btoa(bin)}
+function unb64txt(b64){const bin=atob(b64.replace(/\n/g,""));const b=Uint8Array.from(bin,c=>c.charCodeAt(0));return new TextDecoder().decode(b)}
+const msg=(x,e)=>{$("msg").textContent=x;$("msg").style.color=e?"var(--r)":"var(--p)"};
+const humanSize=n=>n<1048576?Math.round(n/1024)+" Ko":(n/1048576).toFixed(1)+" Mo";
+const nameOf=o=>!o?"":(typeof o==="string"?o:(o[lang]||o.ar||o.fr||o.en||""));
+let DB=null,editId=null;
 
 async function getDB(){
-  const r=await fetch(api('data/content.json')+'?ref='+$('branch').value.trim()+'&t='+Date.now(),{headers:H()});
-  if(!r.ok)throw Error('تعذر قراءة data/content.json. تحقق من الاسم والمستودع والـ Token.');
+  const r=await fetch(api("data/content.json")+"?ref="+encodeURIComponent($("branch").value.trim())+"&t="+Date.now(),{headers:H()});
+  if(r.status===404&&confirm(t("createDB"))){
+    const empty={levels:[{id:"1as",name:{ar:"السنة الأولى ثانوي",fr:"1ère année secondaire",en:"Year 1"}},{id:"2as",name:{ar:"السنة الثانية ثانوي",fr:"2e année secondaire",en:"Year 2"}},{id:"3as",name:{ar:"السنة الثالثة ثانوي",fr:"3e année secondaire",en:"Year 3"}}],streams:[{id:"all",name:{ar:"كل الشعب",fr:"Toutes filières",en:"All"}}],subjects:[{id:"math",icon:"📐",color:"#2563eb",name:{ar:"الرياضيات",fr:"Mathématiques",en:"Maths"}}],items:[]};
+    await putFile("data/content.json",b64txt(JSON.stringify(empty,null,1)),"Create content.json");
+    return getDB();
+  }
+  if(!r.ok)throw Error(t("errDB"));
   const j=await r.json();
-  return{sha:j.sha,db:JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))))};
+  const db=JSON.parse(unb64txt(j.content));
+  db.levels=db.levels||[];db.streams=db.streams||[{id:"all",name:"all"}];db.subjects=db.subjects||[];db.items=db.items||[];
+  return{sha:j.sha,db};
 }
 async function putFile(path,content,note,sha){
-  const body={message:note,content,branch:$('branch').value.trim()};
+  const body={message:note,content,branch:$("branch").value.trim()};
   if(sha)body.sha=sha;
-  const r=await fetch(api(path),{method:'PUT',headers:H(),body:JSON.stringify(body)});
-  if(!r.ok)throw Error('فشل الحفظ: '+((await r.json()).message||r.status));
+  const r=await fetch(api(path),{method:"PUT",headers:H(),body:JSON.stringify(body)});
+  if(!r.ok){let m=r.status;try{m=(await r.json()).message||m}catch(e){} throw Error("GitHub: "+m)}
 }
-const saveDB=(db,sha,note)=>putFile('data/content.json',b64(JSON.stringify(db,null,1)),note,sha);
+const saveDB=(db,sha,note)=>putFile("data/content.json",b64txt(JSON.stringify(db,null,1)),note,sha);
+function readFileB64(f){return new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result.split(",")[1]);r.onerror=no;r.readAsDataURL(f)})}
+function fmtFrom(name,url){
+  const s=(name||url||"").toLowerCase();
+  if(/youtu\.?be/.test(s))return"youtube";
+  const m=s.match(/\.([a-z0-9]+)(\?|#|$)/);
+  if(m&&["pdf","doc","docx","epub","ppt","pptx","zip","mp4","webm"].includes(m[1]))return m[1];
+  return"";
+}
 
 function show(){
-  const opt=a=>a.map(x=>'<option value="'+esc(x.id)+'">'+esc(x.name)+'</option>').join('');
-  $('level').innerHTML=opt(DB.db.levels);
-  $('subject').innerHTML=opt(DB.db.subjects);
-  $('add').hidden=$('list').hidden=false;
-  $('items').innerHTML=DB.db.items.length?DB.db.items.slice().reverse().map(i=>
-    '<div class="it"><span>'+esc(i.title)+'<br><small>'+esc(i.chapter)+' - '+esc(i.type)+'</small></span><button class="d" data-id="'+esc(i.id)+'">حذف</button></div>'
-  ).join(''):'<small>لا يوجد محتوى بعد.</small>';
+  const opt=a=>a.map(x=>'<option value="'+esc(x.id)+'">'+esc(nameOf(x.name))+'</option>').join("");
+  $("level").innerHTML=opt(DB.db.levels);
+  $("subject").innerHTML=opt(DB.db.subjects);
+  $("stream").innerHTML=opt(DB.db.streams);
+  $("add").hidden=$("list").hidden=false;
+  renderList();
 }
-$('conn').onclick=async()=>{
-  localStorage.setItem('cfg',JSON.stringify({owner:$('owner').value.trim(),repo:$('repo').value.trim(),branch:$('branch').value.trim(),token:$('token').value.trim()}));
-  try{DB=await getDB();show();msg('تم الاتصال بنجاح')}catch(e){alert(e.message)}
+function renderList(){
+  const q=($("filter").value||"").toLowerCase();
+  const items=DB.db.items.filter(i=>(i.title||"").toLowerCase().includes(q));
+  $("items").innerHTML=items.length?items.slice().reverse().map(i=>
+    '<div class="it"><span>'+esc(i.title)+'<br><small>'+esc(i.level)+' · '+esc(i.subject)+' · '+esc(i.type)+' · '+esc(i.format||'')+(i.solution||i.solutionUrl?' · ✓ sol.':'')+'</small></span>'+
+    '<span><button class="e" data-edit="'+esc(i.id)+'">'+t("edit")+'</button> <button class="d" data-del="'+esc(i.id)+'">'+t("del")+'</button></span></div>'
+  ).join(""):'<small>'+t("empty")+'</small>';
+}
+$("filter").addEventListener("input",renderList);
+
+function clearForm(){
+  editId=null;$("editing").textContent="";$("cancelEdit").hidden=true;$("pub").textContent=t("publish");
+  ["chapter","title","desc","body","link","solution","sollink","duration"].forEach(id=>$(id).value="");
+  $("file").value="";$("solfile").value="";
+}
+$("cancelEdit").onclick=clearForm;
+
+$("conn").onclick=async()=>{
+  const cfg={owner:$("owner").value.trim(),repo:$("repo").value.trim(),branch:$("branch").value.trim(),token:$("token").value.trim()};
+  sessionStorage.setItem("thanawi-cfg",JSON.stringify(cfg));
+  if($("remember").checked)localStorage.setItem("thanawi-cfg",JSON.stringify(cfg));else localStorage.removeItem("thanawi-cfg");
+  localStorage.removeItem("cfg"); // ancien format
+  $("conn").disabled=true;
+  try{DB=await getDB();show();msg(t("okConn"))}catch(e){msg(e.message,1)}
+  $("conn").disabled=false;
 };
-$('pub').onclick=async()=>{
-  const f=$('file').files[0],link=$('link').value.trim(),title=$('title').value.trim(),chapter=$('chapter').value.trim();
-  if(!title||!chapter)return msg('أدخل العنوان والفصل',1);
-  if(!f&&!link)return msg('أضف رابط يوتيوب أو اختر ملفًا',1);
-  if(f&&f.size>50*1024*1024)return msg('الملف أكبر من 50 ميغابايت. ارفعه على يوتيوب واستعمل الرابط.',1);
-  $('pub').disabled=true;
+
+async function uploadIf(fileInput,prefix){
+  const f=fileInput.files[0];
+  if(!f)return null;
+  if(f.size>25*1024*1024)throw Error(t("tooBig"));
+  const data=await readFileB64(f);
+  const ext=(f.name.split(".").pop()||"bin").toLowerCase().replace(/[^a-z0-9]/g,"");
+  const path="files/"+prefix+Date.now().toString(36)+"."+ext;
+  await putFile(path,data,"Add file "+path);
+  return{path,size:humanSize(f.size),ext};
+}
+
+$("pub").onclick=async()=>{
+  const title=$("title").value.trim();
+  if(!title)return msg(t("needTitle"),1);
+  const hasNew=$("file").files[0]||$("link").value.trim()||$("body").value.trim();
+  if(!editId&&!hasNew)return msg(t("needContent"),1);
+  $("pub").disabled=true;
   try{
-    let url=link;
-    if(f){
-      msg('جارٍ رفع الملف...');
-      const data=await new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result.split(',')[1]);r.onerror=no;r.readAsDataURL(f)});
-      const ext=(f.name.split('.').pop()||'bin').toLowerCase().replace(/[^a-z0-9]/g,'');
-      url='files/'+Date.now()+'.'+ext;
-      await putFile(url,data,'Add file '+url);
-    }
-    msg('جارٍ تحديث القائمة...');
+    let url=$("link").value.trim(),size="",format="";
+    const up=await uploadIf($("file"),"");
+    if(up){url=up.path;size=up.size;format=up.ext}
+    const solUp=await uploadIf($("solfile"),"sol-");
+    msg(t("saving"));
     DB=await getDB();
-    DB.db.items.push({id:Date.now().toString(36),level:$('level').value,subject:$('subject').value,chapter,type:$('type').value,title,url,date:new Date().toISOString().slice(0,10)});
-    await saveDB(DB.db,DB.sha,'Add: '+title);
-    DB=await getDB();show();
-    $('title').value=$('link').value=$('file').value='';
-    msg('تم النشر. سيظهر في الموقع خلال دقيقة أو دقيقتين.');
+    const old=editId?DB.db.items.find(i=>i.id===editId):null;
+    let sol=$("solution").value.trim();
+    if(sol&&sol[0]!=="<")sol="<div class='bx solbox'>"+esc(sol).replace(/\n/g,"<br>")+"</div>";
+    const item={
+      id:editId||Date.now().toString(36),
+      level:$("level").value,stream:$("stream").value||"all",subject:$("subject").value,
+      chapter:$("chapter").value.trim(),type:$("type").value,title,
+      desc:$("desc").value.trim(),lang:$("clang").value,
+      url:url||(old?old.url:""),format:format||fmtFrom("",url)||(old?old.format:"")||($("body").value.trim()?"html":""),
+      size:size||(old&&!url?old.size:""),duration:$("duration").value.trim(),
+      body:$("body").value.trim()||(old&&!$("body").value.trim()?old.body:""),
+      solution:sol,solutionUrl:solUp?solUp.path:($("sollink").value.trim()||(old?old.solutionUrl:"")),
+      date:new Date().toISOString().slice(0,10)
+    };
+    if(old){const ix=DB.db.items.findIndex(i=>i.id===editId);DB.db.items[ix]=item}
+    else DB.db.items.push(item);
+    await saveDB(DB.db,DB.sha,(editId?"Update: ":"Add: ")+title);
+    DB=await getDB();show();clearForm();
+    msg(editId?t("okEdit"):t("okPub"));
   }catch(e){msg(e.message,1)}
-  $('pub').disabled=false;
+  $("pub").disabled=false;
 };
-$('items').onclick=async e=>{
-  const id=e.target.dataset.id;
-  if(!id||!confirm('حذف هذا العنصر من الموقع؟'))return;
+
+$("items").onclick=async e=>{
+  const delId=e.target.dataset.del,editTarget=e.target.dataset.edit;
+  if(editTarget){
+    const i=DB.db.items.find(x=>x.id===editTarget);if(!i)return;
+    editId=i.id;$("editing").textContent=t("editing")+i.title+")";$("cancelEdit").hidden=false;
+    $("level").value=i.level;$("subject").value=i.subject;$("stream").value=i.stream||"all";$("type").value=i.type;
+    $("chapter").value=i.chapter||"";$("clang").value=i.lang||"ar";$("title").value=i.title||"";$("desc").value=i.desc||"";
+    $("body").value=i.body||"";$("link").value=(i.url&&i.url.startsWith("http"))?i.url:"";
+    $("solution").value=i.solution||"";$("sollink").value=(i.solutionUrl&&i.solutionUrl.startsWith("http"))?i.solutionUrl:"";
+    $("duration").value=i.duration||"";
+    window.scrollTo({top:$("add").offsetTop-10,behavior:"smooth"});
+    return;
+  }
+  if(!delId||!confirm(t("confirmDel")))return;
   try{
     DB=await getDB();
-    DB.db.items=DB.db.items.filter(i=>i.id!==id);
-    await saveDB(DB.db,DB.sha,'Remove item');
-    DB=await getDB();show();msg('تم الحذف');
+    DB.db.items=DB.db.items.filter(i=>i.id!==delId);
+    await saveDB(DB.db,DB.sha,"Remove item");
+    DB=await getDB();show();msg(t("okDel"));
   }catch(er){msg(er.message,1)}
 };
+applyLang();
 </script>
 </body>
 </html>

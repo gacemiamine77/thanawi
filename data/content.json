@@ -1,0 +1,729 @@
+{
+ "levels": [
+  {
+   "id": "1as",
+   "name": {
+    "ar": "السنة الأولى ثانوي",
+    "fr": "1ère année secondaire",
+    "en": "1st year secondary"
+   }
+  },
+  {
+   "id": "2as",
+   "name": {
+    "ar": "السنة الثانية ثانوي",
+    "fr": "2e année secondaire",
+    "en": "2nd year secondary"
+   }
+  },
+  {
+   "id": "3as",
+   "name": {
+    "ar": "السنة الثالثة ثانوي (بكالوريا)",
+    "fr": "3e année secondaire (Bac)",
+    "en": "3rd year secondary (Bac)"
+   }
+  }
+ ],
+ "streams": [
+  {
+   "id": "all",
+   "name": {
+    "ar": "كل الشعب",
+    "fr": "Toutes filières",
+    "en": "All streams"
+   }
+  },
+  {
+   "id": "tronc-sciences",
+   "name": {
+    "ar": "جذع مشترك علوم وتكنولوجيا",
+    "fr": "Tronc commun Sciences",
+    "en": "Common core Science"
+   }
+  },
+  {
+   "id": "tronc-lettres",
+   "name": {
+    "ar": "جذع مشترك آداب",
+    "fr": "Tronc commun Lettres",
+    "en": "Common core Letters"
+   }
+  },
+  {
+   "id": "sci-exp",
+   "name": {
+    "ar": "علوم تجريبية",
+    "fr": "Sciences expérimentales",
+    "en": "Experimental Sciences"
+   }
+  },
+  {
+   "id": "math",
+   "name": {
+    "ar": "رياضيات",
+    "fr": "Mathématiques",
+    "en": "Mathematics"
+   }
+  },
+  {
+   "id": "tech-math",
+   "name": {
+    "ar": "تقني رياضي",
+    "fr": "Technique mathématique",
+    "en": "Technical Mathematics"
+   }
+  },
+  {
+   "id": "gestion-eco",
+   "name": {
+    "ar": "تسيير واقتصاد",
+    "fr": "Gestion et économie",
+    "en": "Management & Economics"
+   }
+  },
+  {
+   "id": "lettres-philo",
+   "name": {
+    "ar": "آداب وفلسفة",
+    "fr": "Lettres et philosophie",
+    "en": "Letters & Philosophy"
+   }
+  },
+  {
+   "id": "langues",
+   "name": {
+    "ar": "لغات أجنبية",
+    "fr": "Langues étrangères",
+    "en": "Foreign Languages"
+   }
+  }
+ ],
+ "subjects": [
+  {
+   "id": "math",
+   "icon": "📐",
+   "color": "#2563eb",
+   "name": {
+    "ar": "الرياضيات",
+    "fr": "Mathématiques",
+    "en": "Mathematics"
+   }
+  },
+  {
+   "id": "physics",
+   "icon": "⚛️",
+   "color": "#7c3aed",
+   "name": {
+    "ar": "العلوم الفيزيائية",
+    "fr": "Physique",
+    "en": "Physics"
+   }
+  },
+  {
+   "id": "science",
+   "icon": "🧬",
+   "color": "#059669",
+   "name": {
+    "ar": "علوم الطبيعة والحياة",
+    "fr": "Sciences naturelles",
+    "en": "Natural Sciences"
+   }
+  },
+  {
+   "id": "arabic",
+   "icon": "📖",
+   "color": "#b45309",
+   "name": {
+    "ar": "اللغة العربية",
+    "fr": "Langue arabe",
+    "en": "Arabic"
+   }
+  },
+  {
+   "id": "french",
+   "icon": "🇫🇷",
+   "color": "#dc2626",
+   "name": {
+    "ar": "اللغة الفرنسية",
+    "fr": "Français",
+    "en": "French"
+   }
+  },
+  {
+   "id": "english",
+   "icon": "🇬🇧",
+   "color": "#0891b2",
+   "name": {
+    "ar": "اللغة الإنجليزية",
+    "fr": "Anglais",
+    "en": "English"
+   }
+  },
+  {
+   "id": "history",
+   "icon": "🏛️",
+   "color": "#9333ea",
+   "name": {
+    "ar": "التاريخ والجغرافيا",
+    "fr": "Histoire-Géographie",
+    "en": "History-Geography"
+   }
+  },
+  {
+   "id": "philo",
+   "icon": "💭",
+   "color": "#db2777",
+   "name": {
+    "ar": "الفلسفة",
+    "fr": "Philosophie",
+    "en": "Philosophy"
+   }
+  },
+  {
+   "id": "islamic",
+   "icon": "🕌",
+   "color": "#65a30d",
+   "name": {
+    "ar": "العلوم الإسلامية",
+    "fr": "Sciences islamiques",
+    "en": "Islamic Sciences"
+   }
+  },
+  {
+   "id": "informatique",
+   "icon": "💻",
+   "color": "#475569",
+   "name": {
+    "ar": "المعلوماتية",
+    "fr": "Informatique",
+    "en": "Computer Science"
+   }
+  },
+  {
+   "id": "eco",
+   "icon": "📊",
+   "color": "#ea580c",
+   "name": {
+    "ar": "الاقتصاد والتسيير",
+    "fr": "Économie et gestion",
+    "en": "Economics & Management"
+   }
+  }
+ ],
+ "items": [
+  {
+   "id": "n1",
+   "level": "3as",
+   "stream": "sci-exp",
+   "subject": "math",
+   "chapter": "Fonctions exponentielle et logarithme",
+   "type": "lesson",
+   "title": "Fonctions exponentielle et logarithme népérien — cours complet (PDF)",
+   "desc": "Cours PDF complet : définitions, propriétés, limites, croissances comparées, exemples corrigés et exercices d'application.",
+   "lang": "fr",
+   "url": "files/cours-exp-ln.pdf",
+   "format": "pdf",
+   "size": "3 Ko",
+   "duration": "",
+   "body": "",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n2",
+   "level": "3as",
+   "stream": "sci-exp",
+   "subject": "physics",
+   "chapter": "Électricité — circuit RC",
+   "type": "exam",
+   "title": "Sujet type Bac — Physique : charge d'un condensateur (circuit RC) + corrigé PDF",
+   "desc": "Sujet d'entraînement au format PDF (7 points, 1 h) avec corrigé type détaillé dans un fichier séparé : cherche d'abord, puis vérifie !",
+   "lang": "fr",
+   "url": "files/sujet-rc.pdf",
+   "format": "pdf",
+   "size": "2 Ko",
+   "duration": "1 h",
+   "body": "",
+   "solution": "",
+   "solutionUrl": "files/sujet-rc-corrige.pdf",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n3",
+   "level": "2as",
+   "stream": "all",
+   "subject": "math",
+   "chapter": "Équations du second degré",
+   "type": "exercise",
+   "title": "Série d'exercices Word — Équations du second degré (DOCX)",
+   "desc": "Fiche d'exercices au format Word (modifiable par l'enseignant) : discriminant, somme et produit, signe du trinôme, problème concret, paramètre m.",
+   "lang": "fr",
+   "url": "files/exercices-second-degre.docx",
+   "format": "docx",
+   "size": "36 Ko",
+   "duration": "",
+   "body": "",
+   "solution": "<div class='bx solbox'><b>Exercice 1 :</b> a) Δ = 1, x = 2 ou x = 3. b) Δ = 25, x = 1/2 ou x = −2. c) Δ = −16 &lt; 0 : aucune solution réelle. d) Δ = 0 : solution double x = 3/2.</div><div class='bx solbox'><b>Exercice 2 :</b> S = 7, P = 12 → 3 et 4 (racines de x² − 7x + 12 = 0). S = −3, P = −10 → 2 et −5.</div><div class='bx solbox'><b>Exercice 3 :</b> f(x) = −(x − 1)(x − 3). f(x) ≥ 0 sur [1 ; 3] (signe opposé à a entre les racines).</div><div class='bx solbox'><b>Exercice 4 :</b> demi-périmètre = 17, aire = 60 → les dimensions sont racines de x² − 17x + 60 = 0 : 5 m et 12 m.</div><div class='bx solbox'><b>Exercice 5 :</b> Δ = 4(m + 1)² − 4m² = 8m + 4. Solution double si m = −1/2 ; deux solutions distinctes si m &gt; −1/2.</div>",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n4",
+   "level": "3as",
+   "stream": "lettres-philo",
+   "subject": "philo",
+   "chapter": "Méthodologie",
+   "type": "book",
+   "title": "Livre numérique (EPUB) — Méthodologie de la dissertation philosophique",
+   "desc": "E-book à lire sur téléphone ou liseuse : analyser un sujet, construire une problématique, choisir un plan (dialectique, analytique, comparatif) et rédiger.",
+   "lang": "fr",
+   "url": "files/methodo-dissertation.epub",
+   "format": "epub",
+   "size": "3 Ko",
+   "duration": "",
+   "body": "",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n5",
+   "level": "3as",
+   "stream": "all",
+   "subject": "math",
+   "chapter": "الدوال والنهايات",
+   "type": "video",
+   "title": "🎬 دروس فيديو: النهايات والاشتقاق (يوتيوب)",
+   "desc": "Sélection de cours vidéo sur YouTube (limites et dérivées). Astuce enseignant : remplacez ce lien par vos propres vidéos depuis la page d'administration — elles s'afficheront directement dans le site.",
+   "lang": "ar",
+   "url": "https://www.youtube.com/results?search_query=%D8%A7%D9%84%D9%86%D9%87%D8%A7%D9%8A%D8%A7%D8%AA+%D9%88%D8%A7%D9%84%D8%A7%D8%B4%D8%AA%D9%82%D8%A7%D9%82+%D8%A7%D9%84%D8%AB%D8%A7%D9%84%D8%AB%D8%A9+%D8%AB%D8%A7%D9%86%D9%88%D9%8A",
+   "format": "youtube",
+   "size": "",
+   "duration": "",
+   "body": "",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n6",
+   "level": "2as",
+   "stream": "all",
+   "subject": "english",
+   "chapter": "Grammar — tenses",
+   "type": "video",
+   "title": "🎬 Video lessons: Present Perfect vs Past Simple (YouTube)",
+   "desc": "Watch curated video lessons on YouTube to master the difference between the present perfect and the past simple, with practice examples.",
+   "lang": "en",
+   "url": "https://www.youtube.com/results?search_query=present+perfect+vs+past+simple",
+   "format": "youtube",
+   "size": "",
+   "duration": "",
+   "body": "",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n7",
+   "level": "1as",
+   "stream": "tronc-sciences",
+   "subject": "physics",
+   "chapter": "الحركة والقوة",
+   "type": "lesson",
+   "title": "وصف الحركة: المسار والسرعة المتوسطة والسرعة اللحظية",
+   "desc": "Leçon en ligne : référentiel, trajectoire, vitesse moyenne et instantanée, exemples et exercice corrigé.",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>المرجع والمسار</h3><p>لا معنى لوصف الحركة دون اختيار <b>مرجع</b> (جسم نعتبره ساكنًا). <b>المسار</b> هو مجموعة المواضع المتتالية التي يشغلها الجسم المتحرك: مستقيم أو منحني (دائري، قطع مكافئ...).</p><h3>السرعة المتوسطة</h3><div class='bx'>V = d / Δt &nbsp;حيث d المسافة المقطوعة و Δt المدة الزمنية. الوحدة الدولية: m/s. للتحويل: 1 m/s = 3,6 km/h.</div><h3>السرعة اللحظية</h3><p>هي سرعة الجسم في لحظة معينة، وتُقدر عمليًا بحساب السرعة المتوسطة بين لحظتين متقاربتين جدًا حول تلك اللحظة (كما في التسجيل بالتصوير المتعاقب).</p><h3>مثال محلول</h3><p>سيارة تقطع 180 km خلال ساعتين: V = 180/2 = 90 km/h = 90/3,6 = 25 m/s.</p><h3>تمرين</h3><p>درّاج يقطع 12 km خلال 30 دقيقة. احسب سرعته المتوسطة بـ km/h ثم بـ m/s.</p>",
+   "solution": "<div class='bx solbox'><b>الحل:</b> Δt = 0,5 h إذن V = 12 / 0,5 = 24 km/h. وبـ m/s: 24 / 3,6 ≈ 6,7 m/s.</div>",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n8",
+   "level": "1as",
+   "stream": "all",
+   "subject": "french",
+   "chapter": "Le texte narratif",
+   "type": "lesson",
+   "title": "Le texte narratif : schéma narratif et temps du récit",
+   "desc": "Cours en ligne : les 5 étapes du schéma narratif, le narrateur, et les temps verbaux du récit (imparfait / passé simple).",
+   "lang": "fr",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>Qu'est-ce qu'un texte narratif ?</h3><p>Un texte narratif <b>raconte une histoire</b> : des événements qui se succèdent dans le temps, vécus par des personnages, réels ou fictifs.</p><h3>Le schéma narratif (5 étapes)</h3><div class='bx'>1) <b>Situation initiale</b> : le cadre, les personnages (équilibre).<br>2) <b>Élément déclencheur</b> : un événement perturbe l'équilibre.<br>3) <b>Péripéties</b> : les actions et les obstacles.<br>4) <b>Dénouement</b> : la résolution du problème.<br>5) <b>Situation finale</b> : un nouvel équilibre.</div><h3>Les temps du récit</h3><div class='bx'><b>Imparfait</b> : descriptions, arrière-plan, habitudes (« Il faisait nuit… »).<br><b>Passé simple</b> : actions qui font avancer l'histoire (« Soudain, la porte s'ouvrit. »).</div><h3>Le narrateur</h3><p>Le narrateur peut être <b>extérieur</b> à l'histoire (3e personne) ou <b>personnage</b> de l'histoire (1re personne : « je »). Il ne faut pas le confondre avec l'auteur.</p>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n9",
+   "level": "2as",
+   "stream": "all",
+   "subject": "arabic",
+   "chapter": "النحو: الممنوع من الصرف",
+   "type": "exercise",
+   "title": "تمارين في الممنوع من الصرف (مع الحلول)",
+   "desc": "Exercices en ligne : repérer les noms interdits de déclinaison complète (ممنوع من الصرف) et justifier. Solutions révélables après avoir cherché.",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>التمرين 1</h3><p>استخرج من الجمل الآتية الأسماء الممنوعة من الصرف وبيّن سبب المنع:<br>1) سافرتُ إلى وهرانَ.<br>2) مررتُ بمساجدَ كثيرةٍ.<br>3) قرأتُ عن عمرَ بن الخطاب.</p><h3>التمرين 2</h3><p>ضع الاسم «أحمد» و«فاطمة» في جملتين: مرة مجرورًا بحرف جر، ومرة مجرورًا بالإضافة، ولاحظ الفرق في الإعراب.</p>",
+   "solution": "<div class='bx solbox'><b>التمرين 1:</b> «وهران» علم مؤنث (مدينة) + زيادة الألف والنون — مجرور بالفتحة. «مساجد» على وزن مَفاعِل (صيغة منتهى الجموع) — مجرور بالفتحة. «عمر» علم على وزن فُعَل مغير عن عامر (العلمية والعدل) — مجرور بالفتحة نيابة عن الكسرة.</div><div class='bx solbox'><b>التمرين 2:</b> بحرف الجر: «مررتُ بأحمدَ» (فتحة نيابة عن الكسرة). بالإضافة: «هذا كتابُ أحمدٍ» (يعود إلى الكسرة، لأن الممنوع من الصرف إذا أُضيف أو دخلت عليه «ال» جُرّ بالكسرة). ومثله: «سلّمتُ على فاطمةَ» / «حقيبةُ فاطمةٍ».</div>",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n10",
+   "level": "3as",
+   "stream": "all",
+   "subject": "history",
+   "chapter": "الحرب الباردة",
+   "type": "summary",
+   "title": "ملخص: الحرب الباردة (1947-1991) في صفحة واحدة",
+   "desc": "Résumé express pour réviser avant le bac : causes, crises majeures (Berlin, Corée, Cuba), détente et fin de la guerre froide.",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>التعريف</h3><p>صراع إيديولوجي وسياسي وعسكري غير مباشر بين المعسكر الغربي بقيادة الولايات المتحدة والمعسكر الشرقي بقيادة الاتحاد السوفياتي، دون مواجهة عسكرية مباشرة بينهما.</p><h3>محطات أساسية</h3><div class='bx'>1947: مبدأ ترومان ومشروع مارشال.<br>1948-1949: حصار برلين والجسر الجوي.<br>1949: قيام حلف الناتو.<br>1950-1953: حرب كوريا.<br>1955: حلف وارسو.<br>1961: بناء جدار برلين.<br>1962: أزمة الصواريخ في كوبا (ذروة الخطر النووي).<br>1970s: مرحلة الانفراج (الوفاق) واتفاقيات الحد من الأسلحة.<br>1989: سقوط جدار برلين.<br>1991: تفكك الاتحاد السوفياتي ونهاية الحرب الباردة.</div><h3>مفهوم مفتاحي</h3><p><b>توازن الرعب النووي</b>: امتلاك الطرفين أسلحة نووية كافية لتدمير بعضهما جعل الحرب المباشرة مستحيلة، فتحولت المواجهة إلى حروب بالوكالة وسباق تسلح وسباق نحو الفضاء.</p>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n11",
+   "level": "1as",
+   "stream": "tronc-sciences",
+   "subject": "science",
+   "chapter": "الخلية وحدة بنيوية",
+   "type": "lesson",
+   "title": "الخلية: البنية المجهرية ووظائف العضيات",
+   "desc": "Leçon en ligne : structure de la cellule (membrane, cytoplasme, noyau, mitochondries…) et comparaison cellule animale / végétale.",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>مكونات الخلية</h3><div class='bx'><b>الغشاء الهيولي:</b> يحمي الخلية وينظم تبادل المواد مع الوسط الخارجي.<br><b>الهيولى (السيتوبلازم):</b> وسط شبه سائل تحدث فيه أغلب التفاعلات وتسبح فيه العضيات.<br><b>النواة:</b> تحتوي على المادة الوراثية (ADN) وتسير نشاط الخلية.<br><b>الميتوكوندري:</b> مقر التنفس الخلوي وإنتاج الطاقة (ATP).<br><b>الشبكة الهيولية وجهاز غولجي:</b> تركيب ونقل وتغليف البروتينات.</div><h3>الخلية النباتية تتميز بـ</h3><p>جدار خلوي (سليلوزي) يعطي الشكل والصلابة، وبلاستيدات خضراء (مقر التخليق الضوئي)، وفجوة عصارية كبيرة. أما الخلية الحيوانية فتفتقر إلى هذه العناصر الثلاثة.</p><h3>مثال تطبيقي</h3><p>خلايا العضلات غنية بالميتوكوندريات لأنها تحتاج إلى كمية كبيرة من الطاقة للانقباض: البنية مرتبطة بالوظيفة.</p>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n12",
+   "level": "1as",
+   "stream": "all",
+   "subject": "informatique",
+   "chapter": "المحيط التكنولوجي",
+   "type": "lesson",
+   "title": "مكونات الحاسوب: العتاد الصلب والبرمجيات",
+   "desc": "Leçon en ligne : matériel (processeur, mémoire RAM/ROM, périphériques d'entrée/sortie) et logiciels (système d'exploitation, applications).",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>العتاد الصلب (Hardware)</h3><div class='bx'><b>وحدة المعالجة المركزية (CPU):</b> تنفذ التعليمات وتعالج المعطيات.<br><b>ذاكرة RAM:</b> ذاكرة حية سريعة تُمحى عند إطفاء الجهاز.<br><b>القرص الصلب / SSD:</b> تخزين دائم للملفات والبرامج.<br><b>لوحات الإدخال:</b> لوحة المفاتيح، الفأرة، الماسح الضوئي.<br><b>لوحات الإخراج:</b> الشاشة، الطابعة، مكبرات الصوت.</div><h3>البرمجيات (Software)</h3><p><b>نظام التشغيل</b> (Windows, Linux, Android) يدير العتاد ويسمح بتشغيل التطبيقات. <b>التطبيقات</b> برامج موجهة لمهام محددة: معالج النصوص، الجداول، المتصفح...</p><h3>وحدات قياس السعة</h3><div class='bx'>1 Ko = 1024 Octets &nbsp;|&nbsp; 1 Mo = 1024 Ko &nbsp;|&nbsp; 1 Go = 1024 Mo &nbsp;|&nbsp; 1 To = 1024 Go</div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n13",
+   "level": "1as",
+   "stream": "all",
+   "subject": "islamic",
+   "chapter": "مقاصد الشريعة",
+   "type": "lesson",
+   "title": "مقاصد الشريعة الإسلامية الخمسة (الكليات)",
+   "desc": "Leçon en ligne : les cinq finalités essentielles de la charia (religion, vie, raison, descendance, biens) avec exemples d'application.",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>ما المقصود بمقاصد الشريعة؟</h3><p>هي الغايات والحِكم التي شرع الله تعالى الأحكام لأجل تحقيقها، جلبًا للمصالح ودفعًا للمفاسد عن العباد في الدنيا والآخرة.</p><h3>الكليات الخمس (الضروريات)</h3><div class='bx'>1) <b>حفظ الدين:</b> شرع العبادات وحرية المعتقد.<br>2) <b>حفظ النفس:</b> تحريم القتل والقصاص وتحريم الاعتداء على الأبدان.<br>3) <b>حفظ العقل:</b> تحريم الخمر والمخدرات وكل ما يغيّبه.<br>4) <b>حفظ النسل/العرض:</b> تنظيم الزواج وتحريم الزنا والقذف.<br>5) <b>حفظ المال:</b> تحريم السرقة والربا والغش، وشرع الزكاة والمعاملات.</div><h3>مراتب المقاصد</h3><p>تترتب المقاصد إلى: <b>ضروريات</b> (لا تقوم الحياة إلا بها)، و<b>حاجيات</b> (تيسّر الحياة كالرخص في السفر)، و<b>تحسينيات</b> (مكارم الأخلاق والآداب). وعند التعارض يُقدَّم الأقوى: فالضروري قبل الحاجي، وحفظ النفس قبل حفظ المال.</p><h3>تطبيق</h3><p>منع قيادة السيارة تحت تأثير المسكر يجمع بين حفظ العقل وحفظ النفس وحفظ المال — مثال على اجتماع عدة كليات في حكم واحد.</p>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "n14",
+   "level": "3as",
+   "stream": "gestion-eco",
+   "subject": "eco",
+   "chapter": "المحاسبة: الميزانية",
+   "type": "lesson",
+   "title": "الميزانية الختامية: الأصول (الاستعمالات) والخصوم (الموارد)",
+   "desc": "Leçon en ligne pour la filière Gestion et économie : lire un bilan comptable, actif vs passif, et l'équilibre Actif = Passif.",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>تعريف الميزانية</h3><p>الميزانية وثيقة محاسبية تلخص في تاريخ معين (عادة 31 ديسمبر) ما تملكه المؤسسة وما عليها من التزامات: صورة فورية للذمة المالية.</p><h3>جانب الأصول (الاستعمالات)</h3><div class='bx'><b>أصول غير جارية:</b> تثبيتات (أراضٍ، مبانٍ، معدات) تستعمل لأكثر من سنة.<br><b>أصول جارية:</b> مخزونات، ديون على الزبائن، نقد في الصندوق والبنك — تتحول إلى سيولة خلال السنة.</div><h3>جانب الخصوم (الموارد)</h3><div class='bx'><b>الأموال الخاصة:</b> رأس المال + الاحتياطيات + نتيجة الدورة.<br><b>خصوم غير جارية:</b> قروض طويلة الأجل.<br><b>خصوم جارية:</b> ديون الموردين، أجور وضرائب مستحقة قصيرة الأجل.</div><h3>قاعدة التوازن</h3><p>في كل لحظة: <b>مجموع الأصول = مجموع الخصوم</b>، لأن كل مورد مالي (خصم) له استعمال (أصل). مثال: قرض بنكي بقيمة 1.000.000 دج لشراء آلة → الخصوم +1.000.000 (قرض) والأصول +1.000.000 (آلة): تبقى الميزانية متوازنة.</p>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l4",
+   "level": "3as",
+   "stream": "all",
+   "subject": "math",
+   "chapter": "الدوال الأسية واللوغاريتمية",
+   "type": "lesson",
+   "title": "الدالة الأسية واللوغاريتم النيبيري: القواعد والنهايات",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>القواعد</h3><div class='bx'>e<sup>a+b</sup> = e<sup>a</sup>·e<sup>b</sup> &nbsp;|&nbsp; e<sup>a−b</sup> = e<sup>a</sup>/e<sup>b</sup> &nbsp;|&nbsp; (e<sup>a</sup>)<sup>n</sup> = e<sup>na</sup><br>ln(ab) = ln a + ln b &nbsp;|&nbsp; ln(a/b) = ln a − ln b &nbsp;|&nbsp; ln(a<sup>n</sup>) = n·ln a (مع a, b &gt; 0)<br>ln(e<sup>x</sup>) = x و e<sup>ln x</sup> = x (x &gt; 0)</div><h3>معادلات ومتراجحات</h3><div class='bx'>e<sup>x</sup> = a ⇔ x = ln a (a &gt; 0)<br>ln x = a ⇔ x = e<sup>a</sup> (x &gt; 0)<br>e<sup>x</sup> &lt; e<sup>y</sup> ⇔ x &lt; y &nbsp;|&nbsp; ln x &lt; ln y ⇔ 0 &lt; x &lt; y</div><h3>النهايات المهمة</h3><div class='bx'>lim e<sup>x</sup> = +∞ عند +∞، و = 0 عند −∞<br>lim e<sup>x</sup>/x<sup>n</sup> = +∞ عند +∞ &nbsp;|&nbsp; lim x<sup>n</sup>·e<sup>x</sup> = 0 عند −∞<br>lim ln x = +∞ عند +∞ و = −∞ عند 0<sup>+</sup><br>lim (ln x)/x = 0 عند +∞ &nbsp;|&nbsp; lim x·ln x = 0 عند 0<sup>+</sup></div><h3>مثال</h3><p>حل المعادلة e<sup>2x</sup> − 3e<sup>x</sup> + 2 = 0. نضع X = e<sup>x</sup> فتصبح X² − 3X + 2 = 0، أي X = 1 أو X = 2. إذن x = 0 أو x = ln 2.</p><h3>تمرين</h3><p>حل المعادلة ln(x − 1) = 2.</p><div class='bx'><b>الحل:</b> الشرط x &gt; 1. ln(x − 1) = 2 تعني x − 1 = e²، إذن x = e² + 1 وهو يحقق الشرط.</div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l5",
+   "level": "2as",
+   "stream": "all",
+   "subject": "math",
+   "chapter": "المعادلات والمتراجحات",
+   "type": "lesson",
+   "title": "المعادلة من الدرجة الثانية: المميّز والحلول",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>الحل بالمميّز</h3><div class='bx'>ax² + bx + c = 0 مع a ≠ 0، والمميّز Δ = b² − 4ac<br>Δ &gt; 0: حلان x = (−b ± √Δ) / 2a<br>Δ = 0: حل مضاعف x = −b / 2a<br>Δ &lt; 0: لا حل في مجموعة الأعداد الحقيقية</div><h3>مجموع الجذرين وجداؤهما</h3><div class='bx'>S = x<sub>1</sub> + x<sub>2</sub> = −b/a &nbsp;|&nbsp; P = x<sub>1</sub>·x<sub>2</sub> = c/a</div><h3>إشارة ثلاثي الحدود</h3><p>إذا كان Δ &gt; 0 فإشارة ax² + bx + c هي إشارة a خارج الجذرين، وعكسها بين الجذرين. وإذا كان Δ &lt; 0 فإشارتها هي إشارة a دائمًا.</p><h3>مثال</h3><p>2x² − 5x + 2 = 0: Δ = 25 − 16 = 9، إذن x = (5 ± 3)/4، أي x = 2 أو x = 1/2. التحقق: S = 5/2 و P = 1.</p><h3>تمرين</h3><p>حل x² + 2x + 5 = 0 في مجموعة الأعداد الحقيقية.</p><div class='bx'><b>الحل:</b> Δ = 4 − 20 = −16 &lt; 0، إذن لا يوجد حل حقيقي.</div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l6",
+   "level": "1as",
+   "stream": "all",
+   "subject": "math",
+   "chapter": "الحساب الجبري",
+   "type": "lesson",
+   "title": "المتطابقات الشهيرة والتحليل إلى جداء عوامل",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>المتطابقات</h3><div class='bx'>(a + b)² = a² + 2ab + b²<br>(a − b)² = a² − 2ab + b²<br>a² − b² = (a − b)(a + b)</div><h3>طرق التحليل</h3><p>1) العامل المشترك: 6x² + 9x = 3x(2x + 3).<br>2) المتطابقة الشهيرة: x² − 6x + 9 = (x − 3)²، و49x² − 25 = (7x − 5)(7x + 5).</p><h3>حيلة في الحساب الذهني</h3><p>101² = (100 + 1)² = 10000 + 200 + 1 = 10201. و99 × 101 = 100² − 1 = 9999.</p><h3>تمرين</h3><p>حلل: x² − 16 و x² + 10x + 25.</p><div class='bx'><b>الحل:</b> x² − 16 = (x − 4)(x + 4). و x² + 10x + 25 = (x + 5)².</div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l7",
+   "level": "2as",
+   "stream": "all",
+   "subject": "physics",
+   "chapter": "الميكانيك",
+   "type": "lesson",
+   "title": "قوانين نيوتن الثلاثة",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>القانون الأول (مبدأ العطالة)</h3><div class='bx'>إذا كان مجموع القوى المؤثرة على جسم معدومًا فإنه يبقى ساكنًا أو يتحرك حركة مستقيمة منتظمة (في معلم غاليلي).</div><h3>القانون الثاني</h3><div class='bx'>ΣF = m·a<br>الوحدات: القوة بالنيوتن (N)، الكتلة بالكيلوغرام (kg)، التسارع بـ m/s²</div><h3>القانون الثالث (الفعل ورد الفعل)</h3><div class='bx'>F<sub>A/B</sub> = − F<sub>B/A</sub> : القوتان متساويتان في الشدة ومتعاكستان في الاتجاه، وتؤثر كل منهما على جسم مختلف.</div><h3>الثقل</h3><p>P = m·g، حيث g ≈ 9.8 N/kg قرب سطح الأرض (ويؤخذ 10 غالبًا في التمارين إن ذكر ذلك).</p><h3>مثال وتمرين</h3><p>جسم كتلته 2 kg يخضع لقوة محصلة شدتها 10 N. تسارعه a = 10/2 = 5 m/s².</p><p>تمرين: ما شدة القوة المحصلة اللازمة لإكساب جسم كتلته 4 kg تسارعًا 3 m/s²؟</p><div class='bx'><b>الحل:</b> F = m·a = 4 × 3 = 12 N.</div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l8",
+   "level": "3as",
+   "stream": "all",
+   "subject": "physics",
+   "chapter": "ثنائي القطب RC",
+   "type": "lesson",
+   "title": "شحن وتفريغ مكثفة في دارة RC",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>ثابت الزمن</h3><div class='bx'>τ = R·C (يقاس بالثانية عندما تكون R بالأوم و C بالفاراد)</div><h3>الشحن (توتر ثابت E)</h3><div class='bx'>u<sub>C</sub>(t) = E·(1 − e<sup>−t/τ</sup>)<br>عند t = τ يبلغ التوتر حوالي 63% من E، وعند t = 5τ يكون الشحن شبه كامل (حوالي 99%).</div><h3>التفريغ</h3><div class='bx'>u<sub>C</sub>(t) = E·e<sup>−t/τ</sup><br>عند t = τ يبقى حوالي 37% من E.</div><h3>العلاقات المفيدة</h3><div class='bx'>q = C·u<sub>C</sub> &nbsp;|&nbsp; i = dq/dt = C·du<sub>C</sub>/dt &nbsp;|&nbsp; الطاقة المخزنة: E<sub>C</sub> = ½·C·u<sub>C</sub>²</div><h3>مثال</h3><p>R = 1 kΩ و C = 100 µF: τ = 1000 × 100×10<sup>−6</sup> = 0.1 s.</p><h3>تمرين</h3><p>ما الطاقة المخزنة في مكثفة سعتها 100 µF عند توتر 10 V؟</p><div class='bx'><b>الحل:</b> E<sub>C</sub> = ½ × 100×10<sup>−6</sup> × 10² = 5×10<sup>−3</sup> J.</div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l9",
+   "level": "3as",
+   "stream": "all",
+   "subject": "science",
+   "chapter": "تركيب البروتين",
+   "type": "lesson",
+   "title": "تركيب البروتين: الاستنساخ والترجمة",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>المرحلتان</h3><p><b>الاستنساخ</b> يحدث داخل النواة: يُنسخ أحد شريطي الـ ADN (الشريط المستنسخ) بواسطة أنزيم ARN بوليميراز، فينتج ARN رسول (ARNm).<br><b>الترجمة</b> تحدث في الهيولى على الريبوزومات: يُقرأ الـ ARNm ثلاثيةً ثلاثيةً، وتجلب ARN الناقلة الأحماض الأمينية المناسبة.</p><h3>الرامزة والشفرة الوراثية</h3><div class='bx'>الرامزة (codon) = ثلاثة نيوكليوتيدات على الـ ARNm.<br>رامزة البدء: AUG (تقابل الميثيونين).<br>رامزات التوقف: UAA و UAG و UGA.<br>الشفرة الوراثية شاملة (عامة عند الكائنات الحية) ومتعددة (عدة رامزات للحمض الأميني الواحد).</div><h3>قاعدة الازدواج</h3><p>في الاستنساخ: A مع U، و T مع A، و G مع C، و C مع G (الأول من الـ ADN والثاني من الـ ARN).</p><h3>مثال</h3><p>الشريط المستنسخ TAC GGT ينتج الـ ARNm التالي: AUG CCA، أي الميثيونين ثم البرولين.</p><h3>تمرين</h3><p>ما الـ ARNm الناتج عن الشريط المستنسخ TAC CTT؟</p><div class='bx'><b>الحل:</b> AUG GAA (ميثيونين ثم حمض الغلوتاميك).</div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l10",
+   "level": "3as",
+   "stream": "all",
+   "subject": "french",
+   "chapter": "Expression écrite",
+   "type": "lesson",
+   "title": "L'argumentation : thèse, arguments et connecteurs",
+   "desc": "",
+   "lang": "fr",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<div dir='ltr' lang='fr' style='text-align:left'><h3>Structure d'un texte argumentatif</h3><div class='bx'>1) Introduction : sujet posé + problématique<br>2) Développement : thèse + arguments + exemples<br>3) Conclusion : bilan + ouverture</div><h3>Connecteurs logiques</h3><div class='bx'>Addition : de plus, en outre, par ailleurs<br>Opposition : mais, cependant, pourtant, en revanche<br>Cause : car, parce que, puisque<br>Conséquence : donc, c'est pourquoi, par conséquent<br>Concession : bien que (+ subjonctif), même si</div><h3>Exemple</h3><p>Thèse : Les réseaux sociaux isolent les jeunes.<br>Argument : ils remplacent les rencontres réelles.<br>Exemple : un adolescent passe des heures en ligne mais voit rarement ses amis.</p><h3>Conseil</h3><p>Un argument + un exemple par paragraphe, avec un connecteur au début de chaque paragraphe.</p></div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l11",
+   "level": "3as",
+   "stream": "all",
+   "subject": "english",
+   "chapter": "Grammar",
+   "type": "lesson",
+   "title": "Conditional sentences (types 0, 1, 2, 3)",
+   "desc": "",
+   "lang": "en",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<div dir='ltr' lang='en' style='text-align:left'><h3>The four types</h3><div class='bx'><b>Type 0</b> (general truths): If + present simple, present simple.<br>If you heat ice, it melts.<br><b>Type 1</b> (real/possible future): If + present simple, will + base verb.<br>If it rains, we will stay home.<br><b>Type 2</b> (unreal present): If + past simple, would + base verb.<br>If I had money, I would travel.<br><b>Type 3</b> (unreal past): If + past perfect, would have + past participle.<br>If she had studied, she would have passed.</div><h3>Remember</h3><p>In type 2, we use were for all persons: If I were you, I would apologize.</p><h3>Exercise</h3><p>Complete: If he (work) harder, he would have succeeded.</p><div class='bx'><b>Answer:</b> had worked.</div></div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l12",
+   "level": "3as",
+   "stream": "all",
+   "subject": "arabic",
+   "chapter": "علوم اللغة",
+   "type": "lesson",
+   "title": "الأساليب الإنشائية: الأمر والنهي والاستفهام والنداء والتمني",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>الأمر</h3><p>طلب فعل على وجه الاستعلاء. صيغه: فعل الأمر (اكتب)، المضارع المقرون بلام الأمر (لِيَكتبْ)، اسم فعل الأمر (صَهْ)، المصدر النائب عن فعله (صبرًا).</p><h3>النهي</h3><p>طلب الكف عن فعل، وصيغته: لا + المضارع المجزوم. مثال: لا تُهمِلْ دروسَك.</p><h3>الاستفهام</h3><p>طلب الفهم. أدواته: الهمزة، هل، من، ما، متى، أين، كيف، كم، أيّ.</p><h3>النداء</h3><p>طلب الإقبال. أدواته: يا، أيا، هيا، أي، والهمزة. مثال: يا طالبَ العلمِ اجتهدْ.</p><h3>التمني</h3><p>طلب أمر محبوب لا يرجى حصوله أو يصعب. أداته الأصلية: ليت. مثال: ليتَ الشبابَ يعودُ يومًا.</p><h3>تدريب</h3><p>عيّن نوع الأسلوب: «هل أنجزتَ واجبك؟»</p><div class='bx'><b>الجواب:</b> استفهام، وأداته «هل».</div>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l13",
+   "level": "3as",
+   "stream": "lettres-philo",
+   "subject": "philo",
+   "chapter": "منهجية المقالة",
+   "type": "lesson",
+   "title": "منهجية المقالة الجدلية في الفلسفة",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>الخطوات</h3><div class='bx'><b>1) المقدمة:</b> تمهيد من الواقع أو من الفكر، ثم طرح المشكلة بسؤال واضح.<br><b>2) العرض:</b><br>• الأطروحة: الموقف الأول مع حججه وأمثلته وأسماء أصحابه.<br>• نقيض الأطروحة: الموقف المعاكس بحججه.<br>• النقد أو التركيب: بيان قوة كل موقف وحدوده، وتجاوزهما بموقف مركّب.<br><b>3) الخاتمة:</b> حل للمشكلة وإجابة عن السؤال المطروح.</div><h3>نصائح</h3><p>استخدم روابط منطقية بين الأفكار (لكن، غير أن، وبالتالي، ومن هنا). تجنب الحشو، وركّز على الحجة المدعمة بمثال.</p><h3>مثال على صياغة المشكلة</h3><p>«هل الحرية مطلقة أم مقيدة بالقانون؟» وتُصاغ بحيث تظهر فيها الأطروحتان المتعارضتان.</p>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l14",
+   "level": "3as",
+   "stream": "all",
+   "subject": "history",
+   "chapter": "الثورة التحريرية",
+   "type": "lesson",
+   "title": "محطات أساسية من الثورة التحريرية الجزائرية (1954-1962)",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>محطات مفصلية</h3><div class='bx'>8 ماي 1945: مجازر سطيف وقالمة وخراطة.<br>1 نوفمبر 1954: اندلاع الثورة وصدور بيان أول نوفمبر.<br>20 أوت 1955: هجومات الشمال القسنطيني.<br>20 أوت 1956: مؤتمر الصومام وتنظيم هياكل الثورة.<br>11 ديسمبر 1960: مظاهرات شعبية عمّت المدن الجزائرية.<br>17 أكتوبر 1961: مظاهرات الجزائريين في باريس.<br>19 مارس 1962: وقف إطلاق النار بعد اتفاقيات إيفيان.<br>5 جويلية 1962: استقلال الجزائر.</div><h3>فكرتان للحفظ</h3><p>كان الهدف المعلن في بيان أول نوفمبر استعادة الدولة الجزائرية السيادة الكاملة. وتميّزت الثورة بالجمع بين الكفاح المسلح والعمل السياسي والدبلوماسي.</p>",
+   "solution": "",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l15",
+   "level": "3as",
+   "stream": "all",
+   "subject": "math",
+   "chapter": "تمارين محلولة",
+   "type": "exercise",
+   "title": "تمارين مراجعة: الاشتقاق والنهايات واللوغاريتم",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>التمرين 1</h3><p>f(x) = x³ − 3x + 1. ادرس اتجاه تغير f.</p><h3>التمرين 2</h3><p>احسب نهاية (2n + 1)/(n + 3) عندما تؤول n إلى +∞.</p><h3>التمرين 3</h3><p>حل المعادلة ln(x − 1) = 2.</p>",
+   "solution": "<div class='bx solbox'><b>الحل 1:</b> f'(x) = 3x² − 3 = 3(x − 1)(x + 1). f متزايدة على ]−∞ ; −1] وعلى [1 ; +∞[، ومتناقصة على [−1 ; 1]. قيمة حدية عظمى محلية f(−1) = 3، وصغرى محلية f(1) = −1.</div><div class='bx solbox'><b>الحل 2:</b> بقسمة البسط والمقام على n نجد (2 + 1/n)/(1 + 3/n) وهي تؤول إلى 2.</div><div class='bx solbox'><b>الحل 3:</b> x &gt; 1 و x − 1 = e²، إذن x = e² + 1.</div>",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  },
+  {
+   "id": "l16",
+   "level": "3as",
+   "stream": "all",
+   "subject": "math",
+   "chapter": "نماذج اختبارات",
+   "type": "exam",
+   "title": "نموذج اختبار في الرياضيات (من إعدادي، للتدريب)",
+   "desc": "",
+   "lang": "ar",
+   "url": "",
+   "format": "html",
+   "size": "",
+   "duration": "",
+   "body": "<h3>التمرين الأول</h3><p>(u<sub>n</sub>) متتالية حيث u<sub>0</sub> = 1 و u<sub>n+1</sub> = 2u<sub>n</sub> + 3. نضع v<sub>n</sub> = u<sub>n</sub> + 3.<br>1) بيّن أن (v<sub>n</sub>) هندسية يطلب تعيين أساسها وحدها الأول.<br>2) اكتب u<sub>n</sub> بدلالة n.</p><h3>التمرين الثاني</h3><p>z = 1 + i√3. اكتب z على الشكل المثلثي ثم احسب z<sup>6</sup>.</p><h3>التمرين الثالث</h3><p>f(x) = ln x − x + 1 على ]0 ; +∞[. بيّن أن ln x ≤ x − 1.</p>",
+   "solution": "<div class='bx solbox'><b>الحل 1:</b> v<sub>n+1</sub> = u<sub>n+1</sub> + 3 = 2u<sub>n</sub> + 6 = 2v<sub>n</sub>، إذن الأساس 2 والحد الأول v<sub>0</sub> = 4. ومنه v<sub>n</sub> = 4·2<sup>n</sup>، و u<sub>n</sub> = 4·2<sup>n</sup> − 3. (التحقق: u<sub>1</sub> = 5.)</div><div class='bx solbox'><b>الحل 2:</b> |z| = 2 و arg z = π/3، إذن z = 2(cos π/3 + i sin π/3). z<sup>6</sup> = 2<sup>6</sup>(cos 2π + i sin 2π) = 64.</div><div class='bx solbox'><b>الحل 3:</b> f'(x) = 1/x − 1، وهي موجبة على ]0 ; 1[ وسالبة على ]1 ; +∞[. إذن f تبلغ قيمتها العظمى f(1) = 0، فـ f(x) ≤ 0، أي ln x ≤ x − 1.</div>",
+   "solutionUrl": "",
+   "date": "2026-10-23"
+  }
+ ]
+}

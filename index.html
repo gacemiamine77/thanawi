@@ -2,35 +2,581 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>منصة الثانوية - دروس وفيديوهات وامتحانات</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanawi — منصة التعليم الثانوي | Cours, exercices et sujets du secondaire</title>
+<meta name="description" content="Plateforme gratuite pour le secondaire (1AS, 2AS, 3AS/Bac) : cours PDF, Word et EPUB à télécharger, cours en ligne, vidéos, exercices et sujets d'examen avec solutions, en arabe, français et anglais.">
+<meta name="theme-color" content="#0b6b3a">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f3f7f4;--c:#fff;--t:#14231b;--m:#5d6f64;--p:#0b6b3a;--r:#c8322b;--b:#d9e4dc}
-@media(prefers-color-scheme:dark){:root{--bg:#0d1511;--c:#15201a;--t:#e6efe9;--m:#93a79b;--p:#4cc98a;--r:#ff7a70;--b:#26372d}}
+:root{
+  --bg:#f2f6f3;--card:#ffffff;--text:#15241b;--muted:#5d6f64;--primary:#0b6b3a;--primary2:#095a30;
+  --accent:#f4b41a;--red:#c8322b;--border:#dbe5de;--sol:#eaf5ee;--shadow:0 2px 10px rgba(11,60,35,.08);
+  --radius:12px;
+}
+[data-theme="dark"]{--bg:#0c1410;--card:#14211a;--text:#e7f0ea;--muted:#9db3a6;--primary:#3fc982;--primary2:#3fc982;--border:#24382d;--sol:#122a1e;--shadow:0 2px 10px rgba(0,0,0,.35)}
 *{box-sizing:border-box}
-body{margin:0;font-family:Tajawal,Tahoma,sans-serif;background:var(--bg);color:var(--t);line-height:1.6}
-header{background:var(--p);color:#fff;padding:2.5rem 1rem 2rem}
-header div{max-width:960px;margin:auto}
-h1{margin:0;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800}
-header p{margin:.4rem 0 0;opacity:.9}
-main{max-width:960px;margin:auto;padding:1rem}
-.f{display:flex;flex-wrap:wrap;gap:.5rem;margin:.5rem 0 1rem}
-.f select,.f input{flex:1 1 150px;padding:.65rem;border:1px solid var(--b);border-radius:6px;background:var(--c);color:var(--t);font:inherit}
-.f select:focus,.f input:focus,.card:focus-visible{outline:2px solid var(--p);outline-offset:2px}
-h2{font-size:1.05rem;margin:1.6rem 0 .6rem;padding-right:.7rem;border-right:4px solid var(--p)}
-.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.7rem}
-.card{display:block;width:100%;text-align:right;font:inherit;background:var(--c);border:1px solid var(--b);border-radius:6px;padding:.8rem;cursor:pointer;color:inherit;text-decoration:none}
-.card:hover{border-color:var(--p)}
-.tag{font-size:.8rem;font-weight:700;color:var(--p)}
-.tag.exam{color:var(--r)}
-.card b{display:block}
-.card small{color:var(--m)}
-.e{text-align:center;color:var(--m);padding:3rem 1rem}
-#m{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;padding:1rem}
-#m.o{display:flex}
-#w{width:100%;max-width:800px;aspect-ratio:16/9;position:relative}
-#w iframe,#w video{width:100%;height:100%;border:0;border-radius:6px;background:#000}
-#x{position:absolute;top:-2.4rem;left:0;background:#fff;border:0;border-radius:6px;padding:.3rem .9rem;cursor:pointer;font:inherit}
-.lk{margin-top:.5rem}
-#r{position:fixed;inset:0;background:var(--bg);displa
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Tajawal,Inter,Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+[dir="ltr"] body{font-family:Inter,Tajawal,Tahoma,sans-serif}
+a{color:var(--primary)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.wrap{max-width:1120px;margin:auto;padding:0 1rem}
+
+/* ---- barre supérieure ---- */
+.topbar{position:sticky;top:0;z-index:50;background:var(--card);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
+.topbar .wrap{display:flex;align-items:center;gap:.8rem;padding-top:.45rem;padding-bottom:.45rem;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--text);font-weight:800;font-size:1.25rem}
+.logo .mark{width:38px;height:38px;border-radius:10px;background:var(--primary);color:#fff;display:grid;place-items:center;font-size:1.15rem}
+.logo small{display:block;font-weight:500;font-size:.68rem;color:var(--muted);line-height:1.2}
+nav.main{display:flex;gap:.25rem;margin-inline-start:auto;flex-wrap:wrap}
+nav.main a{text-decoration:none;color:var(--text);padding:.4rem .7rem;border-radius:8px;font-weight:600;font-size:.95rem}
+nav.main a:hover,nav.main a.on{background:var(--sol);color:var(--primary)}
+.tools{display:flex;gap:.35rem;align-items:center}
+.langbtn,.iconbtn{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:8px;padding:.35rem .6rem;font-weight:700;font-size:.85rem}
+.langbtn.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+/* ---- hero ---- */
+.hero{background:linear-gradient(135deg,var(--primary) 0%,#128a4c 60%,#17a55c 100%);color:#fff;padding:2.6rem 0 2.2rem}
+.hero h1{margin:0 0 .4rem;font-size:clamp(1.7rem,4.5vw,2.7rem);font-weight:800;line-height:1.35}
+.hero p{margin:0;opacity:.94;max-width:720px}
+.hero .search{display:flex;gap:.5rem;margin-top:1.2rem;max-width:640px}
+.hero .search input{flex:1;padding:.75rem 1rem;border:0;border-radius:10px;font:inherit;color:#15241b}
+.hero .search button{background:var(--accent);border:0;border-radius:10px;padding:.75rem 1.3rem;font-weight:800;color:#3a2a00}
+.chips{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:1rem}
+.chip{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:99px;padding:.3rem .85rem;font-weight:700;font-size:.88rem;text-decoration:none}
+.chip:hover{background:rgba(255,255,255,.28)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem;margin:-1.1rem 0 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:.9rem;text-align:center;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:1.5rem;color:var(--primary);line-height:1.2}
+.stat span{color:var(--muted);font-size:.88rem}
+.bac{margin-top:.7rem;background:linear-gradient(90deg,#7c2d12,#c2410c);color:#fff;border-radius:var(--radius);padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.bac b{font-size:1.15rem}
+
+/* ---- sections & cartes ---- */
+main{padding:1.4rem 0 3rem}
+h2.sec{font-size:1.3rem;margin:1.8rem 0 .8rem;display:flex;align-items:center;gap:.5rem}
+h2.sec::before{content:"";width:5px;height:1.3em;background:var(--primary);border-radius:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.85rem}
+.levelcard,.subjcard{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:transform .12s,border-color .12s}
+.levelcard:hover,.subjcard:hover{transform:translateY(-2px);border-color:var(--primary)}
+.levelcard b{font-size:1.1rem}
+.levelcard .n{font-size:2rem;font-weight:800;color:var(--primary);line-height:1}
+.subjgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.6rem}
+.subjcard{text-align:center;padding:.9rem .5rem}
+.subjcard .ic{font-size:1.7rem}
+.subjcard b{display:block;font-size:.95rem}
+.subjcard small{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.45rem;position:relative}
+.card .stripe{position:absolute;inset-inline-start:0;top:0;bottom:0;width:5px;border-radius:var(--radius) 0 0 var(--radius)}
+[dir="rtl"] .card .stripe{border-radius:0 var(--radius) var(--radius) 0}
+.badges{display:flex;gap:.35rem;flex-wrap:wrap;align-items:center}
+.badge{font-size:.72rem;font-weight:800;border-radius:99px;padding:.12rem .55rem;background:var(--sol);color:var(--primary);border:1px solid var(--border)}
+.badge.fmt{background:#eef2ff;color:#3730a3}
+[data-theme="dark"] .badge.fmt{background:#1e2440;color:#a5b4fc}
+.badge.exam{background:#fdecec;color:var(--red)}
+.badge.lang{background:transparent;color:var(--muted)}
+.badge.hasol{background:#fff7e0;color:#92600a}
+[data-theme="dark"] .badge.hasol{background:#33270a;color:#f4b41a}
+.card h3{margin:0;font-size:1.02rem;line-height:1.55}
+.card h3 a{color:var(--text);text-decoration:none}
+.card h3 a:hover{color:var(--primary)}
+.card .meta{color:var(--muted);font-size:.85rem}
+.card .desc{color:var(--muted);font-size:.9rem;margin:0}
+.card .acts{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:auto;padding-top:.5rem}
+.btn{display:inline-flex;align-items:center;gap:.35rem;border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:9px;padding:.45rem .8rem;font-weight:700;font-size:.88rem;text-decoration:none}
+.btn:hover{border-color:var(--primary);color:var(--primary)}
+.btn.pri{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.pri:hover{background:var(--primary2);color:#fff}
+.btn.dl{background:var(--sol);color:var(--primary)}
+.favbtn{position:absolute;inset-inline-end:.55rem;top:.55rem;border:0;background:transparent;font-size:1.25rem;color:#c8b86a;line-height:1;padding:.2rem}
+.doneflag{color:var(--primary);font-weight:800;font-size:.8rem}
+
+/* ---- filtres ---- */
+.filters{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:.9rem;box-shadow:var(--shadow);display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1rem}
+.filters input[type=search]{flex:2 1 220px}
+.filters select,.filters input{padding:.6rem .7rem;border:1px solid var(--border);border-radius:9px;background:var(--bg);color:var(--text);font:inherit;font-size:.93rem}
+.filters select{flex:1 1 150px}
+.results{color:var(--muted);margin:.2rem 0 .8rem;font-size:.92rem}
+.empty{text-align:center;color:var(--muted);padding:3rem 1rem;background:var(--card);border:1px dashed var(--border);border-radius:var(--radius)}
+.empty .big{font-size:2.4rem}
+
+/* ---- visionneuse ---- */
+.viewer-head{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;box-shadow:var(--shadow)}
+.viewer-head h1{margin:.4rem 0 .3rem;font-size:clamp(1.25rem,3vw,1.8rem);line-height:1.5}
+.viewer-head .meta{color:var(--muted)}
+.frame{margin-top:1rem;background:#000;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.frame iframe,.frame video{width:100%;display:block;border:0}
+.frame iframe{height:min(78vh,720px);background:#fff}
+.frame .ratio{aspect-ratio:16/9}
+.frame .ratio iframe{height:100%}
+.lesson{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem;margin-top:1rem;box-shadow:var(--shadow);font-size:1.03rem}
+.lesson h3{color:var(--primary);margin:1.3rem 0 .4rem;font-size:1.15rem}
+.lesson h3:first-child{margin-top:0}
+.lesson .bx{background:var(--sol);border:1px solid var(--border);border-inline-start:4px solid var(--primary);border-radius:8px;padding:.7rem .9rem;margin:.6rem 0}
+.lesson .bx.solbox{border-inline-start-color:var(--accent);background:#fffaf0}
+[data-theme="dark"] .lesson .bx.solbox{background:#241c08}
+.solwrap{margin-top:1rem}
+.solbody{display:none}
+.solbody.open{display:block}
+.bigext{display:grid;place-items:center;text-align:center;gap:.6rem;background:var(--card);border:1px dashed var(--border);border-radius:var(--radius);padding:2rem 1rem;margin-top:1rem}
+.bigext .big{font-size:2.6rem}
+.crumb{color:var(--muted);font-size:.9rem;margin-bottom:.8rem}
+.crumb a{text-decoration:none}
+.related{margin-top:1.6rem}
+
+/* ---- conseils ---- */
+.tip{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow)}
+.tip h3{margin:.2rem 0 .4rem;color:var(--primary)}
+.tip p{margin:0;color:var(--muted)}
+table.cmp{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--border);padding:.6rem .7rem;text-align:start;vertical-align:top}
+table.cmp th{background:var(--sol);color:var(--primary)}
+.tablewrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
+
+footer{border-top:1px solid var(--border);background:var(--card);color:var(--muted);padding:1.6rem 0;font-size:.92rem}
+footer .wrap{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:space-between}
+.toast{position:fixed;bottom:1rem;inset-inline-start:50%;transform:translateX(50%);background:var(--text);color:var(--bg);padding:.6rem 1.1rem;border-radius:99px;font-weight:700;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s;z-index:99}
+[dir="ltr"] .toast{transform:translateX(-50%)}
+.toast.show{opacity:1}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.load{text-align:center;padding:3rem;color:var(--muted)}
+
+@media print{
+  .topbar,.hero,.filters,footer,.acts,.no-print,.bac,.stats,.related,.favbtn{display:none!important}
+  body{background:#fff;color:#000}
+  .solbody{display:block!important}
+  .lesson,.viewer-head{border:0;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="logo" href="#/"><span class="mark">🎓</span><span>Thanawi<small data-i18n="tagline">منصة التعليم الثانوي</small></span></a>
+    <nav class="main" aria-label="Navigation">
+      <a href="#/" data-nav="home" data-i18n="navHome">الرئيسية</a>
+      <a href="#/library" data-nav="library" data-i18n="navLib">المكتبة</a>
+      <a href="#/favorites" data-nav="favorites" data-i18n="navFav">المفضلة</a>
+      <a href="#/tips" data-nav="tips" data-i18n="navTips">نصائح ومواقع مشابهة</a>
+    </nav>
+    <div class="tools" role="group" aria-label="Language">
+      <button class="langbtn" data-lang="ar">العربية</button>
+      <button class="langbtn" data-lang="fr">Français</button>
+      <button class="langbtn" data-lang="en">English</button>
+      <button class="iconbtn" id="themeBtn" aria-label="Theme">🌙</button>
+    </div>
+  </div>
+</header>
+
+<div id="app"><div class="load">…</div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <b>Thanawi 🎓</b> — <span data-i18n="footAbout">منصة مجانية لتلاميذ الطور الثانوي: دروس، تمارين، مواضيع امتحانات وحلول، بثلاث لغات.</span><br>
+      <span data-i18n="footNote">المحتوى تعليمي ويُكمّل عمل الأستاذ ولا يعوّضه. تحقق دائمًا من الحلول بنفسك.</span>
+    </div>
+    <div>
+      <a href="#/library" data-i18n="navLib">المكتبة</a> ·
+      <a href="#/tips" data-i18n="navTips">نصائح ومواقع مشابهة</a> ·
+      <a href="admin.html" data-i18n="admin">الإدارة</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* ================= i18n ================= */
+const I18N = {
+ar:{tagline:"منصة التعليم الثانوي",navHome:"الرئيسية",navLib:"المكتبة",navFav:"المفضلة",navTips:"نصائح ومواقع مشابهة",admin:"الإدارة",
+heroT:"كل دروس الثانوية في مكان واحد",heroP:"حمّل الدروس والمذكرات بصيغ PDF وWord وEPUB، تابع الدروس المصوّرة، تدرّب على التمارين ومواضيع الامتحانات، واطّلع على الحلول متى أردت — للسنوات الأولى والثانية والثالثة ثانوي.",
+searchPh:"ابحث عن درس، تمرين، موضوع امتحان…",search:"بحث",
+stTotal:"مورد تعليمي",stLesson:"درس",stEx:"تمارين ومواضيع",stVideo:"درس مصوّر",stFile:"ملف للتحميل",
+bacT:"🎯 العد التنازلي للبكالوريا (تقدير تقريبي)",bacD:"يوم متبقي — نظّم مراجعتك من الآن!",bacDone:"حظًّا سعيدًا للمترشحين!",
+levelsT:"اختر مستواك الدراسي",subjectsT:"تصفح حسب المادة",latestT:"أحدث الموارد",allLib:"تصفح كل المكتبة ←",resources:"مورد",
+quickPdf:"📄 دروس PDF",quickVideo:"🎬 دروس مصوّرة",quickExam:"📝 مواضيع وحلول",quickOnline:"📚 دروس على الخط",
+fSearch:"بحث…",fLevel:"كل المستويات",fStream:"كل الشعب",fSubject:"كل المواد",fType:"كل الأنواع",fFormat:"كل الصيغ",fLang:"كل اللغات",sortRecent:"الأحدث أولًا",sortTitle:"العنوان أ–ي",reset:"↺ إعادة التعيين",
+found:"مورد متاح",noRes:"لا توجد نتائج مطابقة",noResP:"جرّب تغيير كلمات البحث أو إزالة بعض المرشحات.",
+type_lesson:"درس",type_exercise:"تمارين",type_exam:"موضوع امتحان",type_video:"فيديو",type_summary:"ملخص",type_book:"كتاب",
+fmt_pdf:"PDF",fmt_docx:"Word",fmt_doc:"Word",fmt_epub:"EPUB",fmt_mp4:"فيديو MP4",fmt_youtube:"YouTube",fmt_html:"درس على الخط",fmt_zip:"ZIP",fmt_ppt:"PowerPoint",fmt_pptx:"PowerPoint",fmt_link:"رابط خارجي",
+open:"فتح",watch:"مشاهدة",read:"قراءة",download:"تحميل",solution:"الحل",withSol:"✓ مع الحل",showSol:"👁 إظهار الحل",hideSol:"🙈 إخفاء الحل",solTitle:"الحل / التصحيح",
+dlSol:"⬇ تحميل الحل (PDF)",dlFile:"⬇ تحميل الملف",extWatch:"▶ مشاهدة على يوتيوب",extNote:"هذا الدرس المصوّر مستضاف على يوتيوب وسيفتح في نافذة جديدة.",
+noPreview:"لا يمكن معاينة هذا النوع من الملفات داخل الموقع، لكن يمكنك تحميله وفتحه على جهازك (Word / قارئ EPUB…).",
+markDone:"✔ أتممته",done:"✓ تم إنجازه",favAdd:"أضيف إلى المفضلة",favDel:"أزيل من المفضلة",favT:"⭐ مفضلتي",favEmpty:"لا توجد عناصر مفضلة بعد. اضغط على النجمة ☆ في أي بطاقة لحفظها هنا.",
+print:"🖨 طباعة / PDF",share:"🔗 نسخ الرابط",copied:"تم نسخ الرابط!",related:"موارد مشابهة",back:"→ رجوع إلى المكتبة",
+chapter:"الفصل/الوحدة",level:"المستوى",subject:"المادة",date:"أضيف في",size:"الحجم",dur:"المدة",
+progT:"تقدمك على هذا الجهاز",progDone:"مورد منجز من",errLoad:"تعذر تحميل المحتوى. تحقق من اتصالك ثم حدّث الصفحة.",
+tipsT:"💡 نصائح للمراجعة الناجعة",sitesT:"🌐 مواقع مشابهة ورسمية مفيدة",sitesP:"هذه المنصات المعروفة في الجزائر والعالم ألهمتنا — زُرها لتوسيع مداركك (روابط خارجية):",
+colSite:"الموقع",colUse:"بماذا يفيدك؟",colIdea:"ما أخذناه منه واقتراحنا",
+footAbout:"منصة مجانية لتلاميذ الطور الثانوي: دروس، تمارين، مواضيع امتحانات وحلول، بثلاث لغات.",footNote:"المحتوى تعليمي ويُكمّل عمل الأستاذ ولا يعوّضه. تحقق دائمًا من الحلول بنفسك.",
+langName_ar:"العربية",langName_fr:"Français",langName_en:"English",home:"الرئيسية",libT:"📚 مكتبة الموارد",libP:"رشّح حسب المستوى والشعبة والمادة والنوع والصيغة، أو ابحث بالكلمات."},
+fr:{tagline:"Plateforme du secondaire",navHome:"Accueil",navLib:"Bibliothèque",navFav:"Favoris",navTips:"Conseils & sites similaires",admin:"Administration",
+heroT:"Tous les cours du lycée au même endroit",heroP:"Télécharge cours et fiches en PDF, Word et EPUB, suis des cours en vidéo, entraîne-toi avec des exercices et des sujets d'examen, puis consulte les solutions quand tu veux — pour la 1AS, la 2AS et la terminale (Bac).",
+searchPh:"Rechercher un cours, un exercice, un sujet…",search:"Chercher",
+stTotal:"ressources",stLesson:"cours",stEx:"exercices & sujets",stVideo:"vidéos",stFile:"fichiers à télécharger",
+bacT:"🎯 Compte à rebours du Bac (estimation)",bacD:"jours restants — organise tes révisions dès maintenant !",bacDone:"Bonne chance aux candidats !",
+levelsT:"Choisis ton niveau",subjectsT:"Parcourir par matière",latestT:"Dernières ressources",allLib:"Toute la bibliothèque →",resources:"ressources",
+quickPdf:"📄 Cours PDF",quickVideo:"🎬 Cours vidéo",quickExam:"📝 Sujets & corrigés",quickOnline:"📚 Cours en ligne",
+fSearch:"Rechercher…",fLevel:"Tous les niveaux",fStream:"Toutes filières",fSubject:"Toutes les matières",fType:"Tous les types",fFormat:"Tous les formats",fLang:"Toutes les langues",sortRecent:"Plus récents d'abord",sortTitle:"Titre A–Z",reset:"↺ Réinitialiser",
+found:"ressource(s) trouvée(s)",noRes:"Aucun résultat",noResP:"Essaie d'autres mots-clés ou retire certains filtres.",
+type_lesson:"Cours",type_exercise:"Exercices",type_exam:"Sujet d'examen",type_video:"Vidéo",type_summary:"Résumé",type_book:"Livre",
+fmt_pdf:"PDF",fmt_docx:"Word",fmt_doc:"Word",fmt_epub:"EPUB",fmt_mp4:"Vidéo MP4",fmt_youtube:"YouTube",fmt_html:"Cours en ligne",fmt_zip:"ZIP",fmt_ppt:"PowerPoint",fmt_pptx:"PowerPoint",fmt_link:"Lien externe",
+open:"Ouvrir",watch:"Regarder",read:"Lire",download:"Télécharger",solution:"Solution",withSol:"✓ avec solution",showSol:"👁 Afficher la solution",hideSol:"🙈 Masquer la solution",solTitle:"Solution / corrigé",
+dlSol:"⬇ Télécharger le corrigé (PDF)",dlFile:"⬇ Télécharger le fichier",extWatch:"▶ Regarder sur YouTube",extNote:"Ce cours vidéo est hébergé sur YouTube et s'ouvrira dans un nouvel onglet.",
+noPreview:"Ce type de fichier ne peut pas être prévisualisé dans le site, mais tu peux le télécharger et l'ouvrir sur ton appareil (Word, lecteur EPUB…).",
+markDone:"✔ Je l'ai terminé",done:"✓ Terminé",favAdd:"Ajouté aux favoris",favDel:"Retiré des favoris",favT:"⭐ Mes favoris",favEmpty:"Aucun favori pour l'instant. Clique sur l'étoile ☆ d'une carte pour la garder ici.",
+print:"🖨 Imprimer / PDF",share:"🔗 Copier le lien",copied:"Lien copié !",related:"Ressources similaires",back:"← Retour à la bibliothèque",
+chapter:"Chapitre / unité",level:"Niveau",subject:"Matière",date:"Ajouté le",size:"Taille",dur:"Durée",
+progT:"Ta progression sur cet appareil",progDone:"ressource(s) terminée(s) sur",errLoad:"Impossible de charger le contenu. Vérifie ta connexion puis actualise la page.",
+tipsT:"💡 Conseils pour réviser efficacement",sitesT:"🌐 Sites similaires et officiels utiles",sitesP:"Ces plateformes connues en Algérie et dans le monde nous ont inspirés — visite-les pour aller plus loin (liens externes) :",
+colSite:"Site",colUse:"Ce qu'il t'apporte",colIdea:"Ce qu'on en retient / notre suggestion",
+footAbout:"Plateforme gratuite pour lycéens : cours, exercices, sujets d'examen et solutions, en trois langues.",footNote:"Contenu pédagogique qui complète le travail de ton enseignant, sans le remplacer. Vérifie toujours les solutions par toi-même.",
+langName_ar:"العربية",langName_fr:"Français",langName_en:"English",home:"Accueil",libT:"📚 Bibliothèque de ressources",libP:"Filtre par niveau, filière, matière, type et format, ou cherche par mots-clés."},
+en:{tagline:"Secondary school platform",navHome:"Home",navLib:"Library",navFav:"Favorites",navTips:"Tips & similar sites",admin:"Admin",
+heroT:"All your high-school lessons in one place",heroP:"Download lessons and handouts in PDF, Word and EPUB, watch video lessons, practise with exercises and exam papers, then check the solutions whenever you like — for Year 1, Year 2 and final year (Bac).",
+searchPh:"Search a lesson, an exercise, an exam paper…",search:"Search",
+stTotal:"resources",stLesson:"lessons",stEx:"exercises & papers",stVideo:"videos",stFile:"downloadable files",
+bacT:"🎯 Bac countdown (estimate)",bacD:"days left — start organising your revision now!",bacDone:"Good luck to all candidates!",
+levelsT:"Pick your level",subjectsT:"Browse by subject",latestT:"Latest resources",allLib:"Browse the whole library →",resources:"resources",
+quickPdf:"📄 PDF lessons",quickVideo:"🎬 Video lessons",quickExam:"📝 Papers & answers",quickOnline:"📚 Online lessons",
+fSearch:"Search…",fLevel:"All levels",fStream:"All streams",fSubject:"All subjects",fType:"All types",fFormat:"All formats",fLang:"All languages",sortRecent:"Newest first",sortTitle:"Title A–Z",reset:"↺ Reset",
+found:"resource(s) found",noRes:"No results",noResP:"Try different keywords or remove some filters.",
+type_lesson:"Lesson",type_exercise:"Exercises",type_exam:"Exam paper",type_video:"Video",type_summary:"Summary",type_book:"Book",
+fmt_pdf:"PDF",fmt_docx:"Word",fmt_doc:"Word",fmt_epub:"EPUB",fmt_mp4:"MP4 video",fmt_youtube:"YouTube",fmt_html:"Online lesson",fmt_zip:"ZIP",fmt_ppt:"PowerPoint",fmt_pptx:"PowerPoint",fmt_link:"External link",
+open:"Open",watch:"Watch",read:"Read",download:"Download",solution:"Solution",withSol:"✓ with solution",showSol:"👁 Show the solution",hideSol:"🙈 Hide the solution",solTitle:"Solution / marking scheme",
+dlSol:"⬇ Download the answer key (PDF)",dlFile:"⬇ Download the file",extWatch:"▶ Watch on YouTube",extNote:"This video lesson is hosted on YouTube and will open in a new tab.",
+noPreview:"This file type cannot be previewed inside the site, but you can download it and open it on your device (Word, EPUB reader…).",
+markDone:"✔ Mark as done",done:"✓ Done",favAdd:"Added to favorites",favDel:"Removed from favorites",favT:"⭐ My favorites",favEmpty:"No favorites yet. Click the ☆ star on any card to keep it here.",
+print:"🖨 Print / PDF",share:"🔗 Copy link",copied:"Link copied!",related:"Similar resources",back:"← Back to library",
+chapter:"Chapter / unit",level:"Level",subject:"Subject",date:"Added on",size:"Size",dur:"Duration",
+progT:"Your progress on this device",progDone:"resource(s) completed out of",errLoad:"Could not load the content. Check your connection and refresh the page.",
+tipsT:"💡 Tips for effective revision",sitesT:"🌐 Useful similar & official sites",sitesP:"These well-known Algerian and international platforms inspired us — visit them to go further (external links):",
+colSite:"Site",colUse:"What it gives you",colIdea:"What we took from it / our suggestion",
+footAbout:"A free platform for secondary students: lessons, exercises, exam papers and solutions, in three languages.",footNote:"Educational content that complements your teacher's work, not replaces it. Always check solutions yourself.",
+langName_ar:"العربية",langName_fr:"Français",langName_en:"English",home:"Home",libT:"📚 Resource library",libP:"Filter by level, stream, subject, type and format, or search by keywords."}
+};
+
+const TIPS = {
+ar:[["🧠 تدرّب قبل رؤية الحل","أهم قاعدة: حاول بنفسك 15 دقيقة على الأقل قبل الضغط على «إظهار الحل». المحاولة ولو فاشلة تثبّت المعلومة أكثر بكثير من القراءة المباشرة."],
+["📝 لخّص كل درس في بطاقة","اختر لنفسك ملخصًا من صفحة واحدة لكل وحدة (قوانين، تعاريف، أمثلة نموذجية) على طريقة مواقع الملخصات مثل DzExams. البطاقات مثالية للمراجعة السريعة قبل الامتحان."],
+["⏱ دروس الفيديو بنشاط","شاهد الفيديو بالورقة والقلم: أوقف عند كل مثال وحلّه بنفسك قبل المتابعة، وسرّع الإعادة إلى 1.25× في المراجعة الثانية."],
+["🎯 مواضيع رسمية بالوقت الحقيقي","في السنة الثالثة، حلّ مواضيع بكالوريا سابقة كاملة بمؤقّت وبدون حلول، ثم صحّح بسلّم التنقيط. هذا ما تنصح به كل منصات البكالوريا (ONEC، DzExams…)."],
+["📅 التكرار المتباعد","راجع الدرس بعد يوم، ثم بعد أسبوع، ثم بعد شهر. الذاكرة تحب التكرار المتباعد أكثر من المراجعة المكثفة في الليلة الأخيرة."],
+["❓ دفتر الأخطاء","دوّن كل خطأ ارتكبته في تمرين مع سببه وتصحيحه. قبل كل امتحان، راجع دفتر الأخطاء فقط — إنه أسرع طريقة للتقدم."]],
+fr:[["🧠 Cherche avant de regarder la solution","Règle d'or : essaie seul pendant au moins 15 minutes avant de cliquer sur « Afficher la solution ». Une tentative, même ratée, ancre la notion bien mieux qu'une lecture directe."],
+["📝 Résume chaque cours en une fiche","Fais-toi une fiche d'une page par chapitre (lois, définitions, exemples types), comme les fiches des sites de résumés type DzExams. Parfait pour réviser juste avant l'épreuve."],
+["⏱ Regarde les vidéos activement","Papier et stylo à la main : mets pause à chaque exemple, résous-le toi-même, puis compare. En 2e visionnage, passe en vitesse 1,25×."],
+["🎯 Des sujets officiels en conditions réelles","En terminale, traite des sujets de bac complets avec un chronomètre et sans corrigé, puis corrige-toi avec le barème. C'est le conseil n°1 des plateformes du bac (ONEC, DzExams…)."],
+["📅 La répétition espacée","Revois le cours après 1 jour, puis 1 semaine, puis 1 mois. La mémoire retient bien mieux qu'avec un bachotage de dernière nuit."],
+["❓ Tiens un cahier d'erreurs","Note chaque erreur, sa cause et sa correction. Avant chaque examen, relis uniquement ce cahier : c'est le moyen le plus rapide de progresser."]],
+en:[["🧠 Try before you peek at the solution","Golden rule: work on your own for at least 15 minutes before clicking “Show the solution”. Even a failed attempt makes the idea stick far better than reading the answer straight away."],
+["📝 Summarise every lesson on one card","Make a one-page card per chapter (laws, definitions, model examples), like the summary sheets on sites such as DzExams. Perfect for last-minute revision."],
+["⏱ Watch videos actively","Pen and paper ready: pause at every example, solve it yourself, then compare. On the second watch, use 1.25× speed."],
+["🎯 Official papers under real conditions","In your final year, do full past bac papers with a timer and no answer key, then mark yourself with the official scheme — the top tip of bac platforms (ONEC, DzExams…)."],
+["📅 Spaced repetition","Revisit each lesson after 1 day, then 1 week, then 1 month. Memory loves spacing much more than cramming the night before."],
+["❓ Keep a mistakes notebook","Write down every mistake, why it happened and the fix. Before each exam, re-read only that notebook — the fastest way to improve."]]
+};
+
+const SITES = [
+["DzExams (dzexams.com)","https://www.dzexams.com",{ar:"أكبر بنك فروض واختبارات وملخصات في الجزائر مصنفة بالمادة والمستوى.",fr:"La plus grande banque algérienne de devoirs, compositions et résumés classés par matière et niveau.",en:"Algeria's biggest bank of assignments, exam papers and summaries by subject and level."},{ar:"استلهمنا منه التصنيف (مستوى/مادة/نوع) وقاعدة: كل تمرين مع حله النموذجي.",fr:"On en reprend le classement (niveau/matière/type) et la règle : chaque exercice avec son corrigé type.",en:"We borrowed its organisation (level/subject/type) and the rule: every exercise ships with an answer key."}],
+["Eddirasa (eddirasa.com)","https://eddirasa.com",{ar:"دروس وتمارين مصححة وحلول كتب مدرسية لجميع الأطوار.",fr:"Cours, exercices corrigés et solutions des manuels scolaires pour tous les cycles.",en:"Lessons, solved exercises and textbook solutions for every cycle."},{ar:"اقتراح: إضافة قسم «حلول تمارين الكتاب المدرسي» كما عندهم.",fr:"Suggestion : ajouter une rubrique « solutions des exercices du manuel officiel » comme chez eux.",en:"Suggestion: add an “official textbook solutions” section like theirs."}],
+["Ency Education","https://www.ency-education.com",{ar:"مكتبة مواضيع وحلول مع أدلة منهجية للمراجعة.",fr:"Bibliothèque de sujets et corrigés, avec des guides méthodologiques.",en:"A library of papers with keys, plus study-method guides."},{ar:"استلهمنا منه أدلة المنهجية (كتاب EPUB للمقالة الفلسفية).",fr:"Inspiration pour nos ressources méthodologiques (l'EPUB sur la dissertation).",en:"Inspiration for our methodology resources (the dissertation EPUB)."}],
+["ONEC — الديوان الوطني للامتحانات","https://www.onec.dz",{ar:"المصدر الرسمي لمواضيع البكالوريا وتصحيحاتها النموذجية.",fr:"La source officielle des sujets du baccalauréat et de leurs corrigés types.",en:"The official source of baccalaureate papers and their official keys."},{ar:"اقتراح: إضافة أرشيف مواضيع البكالوريا حسب السنة والشعبة كل جوان.",fr:"Suggestion : archiver chaque juin les sujets officiels du bac par année et par filière.",en:"Suggestion: archive the official bac papers every June, by year and stream."}],
+["ONEFD — التعليم عن بعد","https://www.onefd.edu.dz",{ar:"منصة رسمية للدروس والتمارين للتعليم عن بعد.",fr:"Plateforme officielle d'enseignement à distance : cours et exercices en ligne.",en:"Official distance-learning platform: online lessons and exercises."},{ar:"مثال للدروس التفاعلية المصحوبة بتمارين ذاتية التصحيح.",fr:"Modèle pour des cours interactifs avec exercices auto-corrigés (voir nos suggestions).",en:"A model for interactive lessons with self-marking quizzes (see our suggestions)."}],
+["Khan Academy","https://www.khanacademy.org",{ar:"دروس فيديو عالمية مجانية مع تمارين فورية وتتبع للتقدم.",fr:"Cours vidéo gratuits mondiaux, exercices interactifs et suivi de progression.",en:"Free world-class video lessons, interactive practice and progress tracking."},{ar:"استلهمنا منه المفضلة وتتبع التقدم؛ لاحقًا: كويزات تفاعلية.",fr:"On en reprend favoris & progression ; prochaine étape suggérée : des quiz interactifs.",en:"We borrowed favorites & progress tracking; next suggested step: interactive quizzes."}]
+];
+
+/* ================= État ================= */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let DB=null;
+let LANG=localStorage.getItem("thanawi-lang")||"ar";
+if(!I18N[LANG])LANG="ar";
+const t=k=>(I18N[LANG]&&I18N[LANG][k])||I18N.ar[k]||k;
+const favs=new Set(JSON.parse(localStorage.getItem("thanawi-fav")||"[]"));
+const done=new Set(JSON.parse(localStorage.getItem("thanawi-done")||"[]"));
+const saveSets=()=>{localStorage.setItem("thanawi-fav",JSON.stringify([...favs]));localStorage.setItem("thanawi-done",JSON.stringify([...done]))};
+const name=o=>!o?"":(typeof o==="string"?o:(o[LANG]||o.ar||o.fr||o.en||""));
+const levelName=id=>name((DB.levels.find(l=>l.id===id)||{}).name);
+const streamName=id=>name((DB.streams.find(l=>l.id===id)||{}).name);
+const subj=id=>DB.subjects.find(s=>s.id===id)||{name:id,icon:"📘",color:"#666"};
+const subjName=id=>name(subj(id).name);
+const FORMATS=["pdf","docx","epub","youtube","mp4","html"];
+const TYPES=["lesson","exercise","exam","video","summary","book"];
+const toast=m=>{const e=$("#toast");e.textContent=m;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2200)};
+
+function fmtOf(it){
+  if(it.format)return it.format;
+  const u=(it.url||"").toLowerCase();
+  if(/youtu\.?be/.test(u))return"youtube";
+  const m=u.match(/\.([a-z0-9]+)(\?|#|$)/); if(m)return m[1];
+  return it.body?"html":"link";
+}
+function ytId(u){const m=String(u||"").match(/(?:youtu\.be\/|[?&]v=|embed\/|shorts\/)([A-Za-z0-9_-]{6,})/);return m?m[1]:null}
+const isFile=it=>it.url&&!ytId(it.url)&&!["html","youtube"].includes(fmtOf(it));
+const hasSol=it=>!!(it.solution||it.solutionUrl);
+
+/* ================= Thème & langue ================= */
+function applyTheme(){const saved=localStorage.getItem("thanawi-theme");const dark=saved?saved==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.dataset.theme=dark?"dark":"light";$("#themeBtn").textContent=dark?"☀️":"🌙"}
+$("#themeBtn").onclick=()=>{const d=document.documentElement.dataset.theme!=="dark";localStorage.setItem("thanawi-theme",d?"dark":"light");applyTheme()};
+function applyLang(){
+  document.documentElement.lang=LANG;document.documentElement.dir=LANG==="ar"?"rtl":"ltr";
+  $$(".langbtn").forEach(b=>b.classList.toggle("on",b.dataset.lang===LANG));
+  $$("[data-i18n]").forEach(e=>e.textContent=t(e.dataset.i18n));
+  document.title="Thanawi — "+t("tagline");
+}
+$$(".langbtn").forEach(b=>b.onclick=()=>{LANG=b.dataset.lang;localStorage.setItem("thanawi-lang",LANG);applyLang();render()});
+
+/* ================= Cartes ================= */
+function cardHTML(it){
+  const s=subj(it.subject),f=fmtOf(it);
+  const openLabel=it.type==="video"?t("watch"):(f==="html"?t("read"):t("open"));
+  return `<article class="card">
+    <span class="stripe" style="background:${esc(s.color)}"></span>
+    <button class="favbtn" data-fav="${esc(it.id)}" aria-label="favorite">${favs.has(it.id)?"★":"☆"}</button>
+    <div class="badges">
+      <span class="badge ${it.type==="exam"?"exam":""}">${esc(t("type_"+it.type))}</span>
+      <span class="badge fmt">${esc(t("fmt_"+f))}</span>
+      ${hasSol(it)?`<span class="badge hasol">${t("withSol")}</span>`:""}
+      <span class="badge lang">${esc(t("langName_"+(it.lang||"ar")))}</span>
+      ${done.has(it.id)?`<span class="doneflag">${t("done")}</span>`:""}
+    </div>
+    <h3><a href="#/item/${encodeURIComponent(it.id)}">${esc(it.title)}</a></h3>
+    <div class="meta">${esc(s.icon)} ${esc(subjName(it.subject))} · ${esc(levelName(it.level))}${it.chapter?` · ${esc(it.chapter)}`:""}</div>
+    ${it.desc?`<p class="desc">${esc(it.desc)}</p>`:""}
+    <div class="meta">${[it.size,it.duration,it.date].filter(Boolean).map(esc).join(" · ")}</div>
+    <div class="acts">
+      <a class="btn pri" href="#/item/${encodeURIComponent(it.id)}">${openLabel}</a>
+      ${isFile(it)?`<a class="btn dl" href="${esc(it.url)}" download>⬇ ${t("download")}${it.size?` (${esc(it.size)})`:""}</a>`:""}
+      ${hasSol(it)?`<a class="btn" href="#/item/${encodeURIComponent(it.id)}?sol=1">✓ ${t("solution")}</a>`:""}
+    </div></article>`;
+}
+function bindFavs(root){
+  root.querySelectorAll("[data-fav]").forEach(b=>b.onclick=()=>{
+    const id=b.dataset.fav;
+    if(favs.has(id)){favs.delete(id);toast(t("favDel"))}else{favs.add(id);toast(t("favAdd"))}
+    saveSets();b.textContent=favs.has(id)?"★":"☆";
+    if(location.hash.startsWith("#/favorites"))render();
+  });
+}
+
+/* ================= Vues ================= */
+function viewHome(){
+  const items=DB.items;
+  const cnt={total:items.length,lesson:items.filter(i=>["lesson","summary","book"].includes(i.type)).length,ex:items.filter(i=>["exercise","exam"].includes(i.type)).length,video:items.filter(i=>i.type==="video").length,file:items.filter(isFile).length};
+  const now=new Date();let bac=new Date(now.getFullYear(),5,14);if(bac<now)bac=new Date(now.getFullYear()+1,5,14);
+  const days=Math.ceil((bac-now)/864e5);
+  const latest=[...items].sort((a,b)=>(b.date||"").localeCompare(a.date||"")).slice(0,6);
+  return `
+  <section class="hero"><div class="wrap">
+    <h1>${t("heroT")}</h1><p>${t("heroP")}</p>
+    <form class="search" id="homeSearch"><input type="search" id="hs" placeholder="${t("searchPh")}" aria-label="search"><button type="submit">${t("search")}</button></form>
+    <div class="chips">
+      <a class="chip" href="#/library?format=pdf">${t("quickPdf")}</a>
+      <a class="chip" href="#/library?type=video">${t("quickVideo")}</a>
+      <a class="chip" href="#/library?type=exam">${t("quickExam")}</a>
+      <a class="chip" href="#/library?format=html">${t("quickOnline")}</a>
+    </div>
+  </div></section>
+  <main class="wrap">
+    <div class="stats">
+      <div class="stat"><b>${cnt.total}</b><span>${t("stTotal")}</span></div>
+      <div class="stat"><b>${cnt.lesson}</b><span>${t("stLesson")}</span></div>
+      <div class="stat"><b>${cnt.ex}</b><span>${t("stEx")}</span></div>
+      <div class="stat"><b>${cnt.video}</b><span>${t("stVideo")}</span></div>
+      <div class="stat"><b>${cnt.file}</b><span>${t("stFile")}</span></div>
+      <div class="stat"><b>${done.size}/${cnt.total}</b><span>${t("progT")}</span></div>
+    </div>
+    <div class="bac"><span>${t("bacT")}</span><b>${days>0?days+" "+t("bacD"):t("bacDone")}</b></div>
+
+    <h2 class="sec">${t("levelsT")}</h2>
+    <div class="grid">${DB.levels.map(l=>`
+      <a class="levelcard" href="#/library?level=${l.id}">
+        <div class="n">${l.id[0]}AS</div><b>${esc(name(l.name))}</b>
+        <div class="meta" style="color:var(--muted)">${items.filter(i=>i.level===l.id).length} ${t("resources")}</div>
+      </a>`).join("")}</div>
+
+    <h2 class="sec">${t("subjectsT")}</h2>
+    <div class="subjgrid">${DB.subjects.map(s=>{const n=items.filter(i=>i.subject===s.id).length;return `
+      <a class="subjcard" href="#/library?subject=${s.id}"><div class="ic">${esc(s.icon)}</div><b>${esc(name(s.name))}</b><small>${n} ${t("resources")}</small></a>`}).join("")}</div>
+
+    <h2 class="sec">${t("latestT")}</h2>
+    <div class="grid">${latest.map(cardHTML).join("")}</div>
+    <p style="text-align:center;margin-top:1.2rem"><a class="btn pri" href="#/library">${t("allLib")}</a></p>
+  </main>`;
+}
+
+function parseHash(){
+  const h=location.hash.replace(/^#\/?/,"");
+  const [path,qs]=h.split("?");
+  const parts=path.split("/").filter(Boolean);
+  return {parts,params:new URLSearchParams(qs||"")};
+}
+
+function viewLibrary(params){
+  const opt=(arr,all,sel,lab)=>`<option value="">${all}</option>`+arr.map(x=>`<option value="${esc(x.id??x)}" ${((x.id??x)===sel)?"selected":""}>${esc(lab?lab(x):name(x.name))}</option>`).join("");
+  const v=k=>esc(params.get(k)||"");
+  return `<main class="wrap">
+    <h2 class="sec">${t("libT")}</h2><p style="color:var(--muted);margin-top:-.4rem">${t("libP")}</p>
+    <form class="filters" id="filters">
+      <input type="search" name="q" placeholder="${t("fSearch")}" value="${v("q")}">
+      <select name="level">${opt(DB.levels,t("fLevel"),params.get("level"))}</select>
+      <select name="stream">${opt(DB.streams.filter(s=>s.id!=="all"),t("fStream"),params.get("stream"))}</select>
+      <select name="subject">${opt(DB.subjects,t("fSubject"),params.get("subject"))}</select>
+      <select name="type">${opt(TYPES,t("fType"),params.get("type"),x=>t("type_"+x))}</select>
+      <select name="format">${opt(FORMATS,t("fFormat"),params.get("format"),x=>t("fmt_"+x))}</select>
+      <select name="lang">${opt(["ar","fr","en"],t("fLang"),params.get("lang"),x=>t("langName_"+x))}</select>
+      <select name="sort">
+        <option value="recent" ${params.get("sort")!=="title"?"selected":""}>${t("sortRecent")}</option>
+        <option value="title" ${params.get("sort")==="title"?"selected":""}>${t("sortTitle")}</option>
+      </select>
+      <button class="btn" type="button" id="resetF">${t("reset")}</button>
+    </form>
+    <div id="libResults"></div>
+  </main>`;
+}
+function filterItems(p){
+  const q=(p.get("q")||"").trim().toLowerCase();
+  let list=DB.items.filter(it=>{
+    if(p.get("level")&&it.level!==p.get("level"))return false;
+    if(p.get("stream")&&it.stream!=="all"&&it.stream!==p.get("stream"))return false;
+    if(p.get("subject")&&it.subject!==p.get("subject"))return false;
+    if(p.get("type")&&it.type!==p.get("type"))return false;
+    if(p.get("format")&&fmtOf(it)!==p.get("format"))return false;
+    if(p.get("lang")&&(it.lang||"ar")!==p.get("lang"))return false;
+    if(q){const hay=(it.title+" "+(it.chapter||"")+" "+(it.desc||"")+" "+subjName(it.subject)).toLowerCase();if(!hay.includes(q))return false}
+    return true;
+  });
+  if(p.get("sort")==="title")list.sort((a,b)=>a.title.localeCompare(b.title));
+  else list.sort((a,b)=>(b.date||"").localeCompare(a.date||""));
+  return list;
+}
+function resultsHTML(list){
+  if(!list.length)return `<div class="empty"><div class="big">🔍</div><b>${t("noRes")}</b><p>${t("noResP")}</p></div>`;
+  return `<div class="results">${list.length} ${t("found")}</div><div class="grid">${list.map(cardHTML).join("")}</div>`;
+}
+
+function viewItem(it,openSol){
+  const f=fmtOf(it),s=subj(it.subject),vid=ytId(it.url);
+  let media="";
+  if(it.type==="video"||f==="youtube"||f==="mp4"){
+    if(vid)media=`<div class="frame"><div class="ratio"><iframe src="https://www.youtube-nocookie.com/embed/${vid}" title="${esc(it.title)}" allowfullscreen loading="lazy"></iframe></div></div>`;
+    else if(f==="mp4")media=`<div class="frame"><video src="${esc(it.url)}" controls preload="metadata"></video></div>`;
+    else if(it.url)media=`<div class="bigext"><div class="big">🎬</div><p>${t("extNote")}</p><a class="btn pri" href="${esc(it.url)}" target="_blank" rel="noopener">${t("extWatch")}</a></div>`;
+  }else if(f==="pdf"&&it.url){
+    media=`<div class="frame"><iframe src="${esc(it.url)}" title="${esc(it.title)}"></iframe></div>`;
+  }else if(it.url&&f!=="html"){
+    media=`<div class="bigext"><div class="big">${f==="epub"?"📖":f==="docx"||f==="doc"?"📝":"📄"}</div><p>${t("noPreview")}</p><a class="btn pri" href="${esc(it.url)}" download>${t("dlFile")} (${esc(t("fmt_"+f))}${it.size?" · "+esc(it.size):""})</a></div>`;
+  }
+  const related=DB.items.filter(x=>x.id!==it.id&&x.subject===it.subject&&(x.level===it.level||x.chapter&&x.chapter===it.chapter)).slice(0,3);
+  return `<main class="wrap">
+    <div class="crumb"><a href="#/">${t("home")}</a> / <a href="#/library">${t("navLib")}</a> / <a href="#/library?subject=${esc(it.subject)}">${esc(subjName(it.subject))}</a></div>
+    <div class="viewer-head">
+      <div class="badges">
+        <span class="badge ${it.type==="exam"?"exam":""}">${esc(t("type_"+it.type))}</span>
+        <span class="badge fmt">${esc(t("fmt_"+f))}</span>
+        ${hasSol(it)?`<span class="badge hasol">${t("withSol")}</span>`:""}
+      </div>
+      <h1>${esc(it.title)}</h1>
+      ${it.desc?`<p style="color:var(--muted);margin:.2rem 0">${esc(it.desc)}</p>`:""}
+      <div class="meta">
+        ${esc(s.icon)} ${t("subject")}: <b>${esc(subjName(it.subject))}</b> ·
+        ${t("level")}: <b>${esc(levelName(it.level))}</b>${it.stream&&it.stream!=="all"?` (${esc(streamName(it.stream))})`:""}
+        ${it.chapter?`· ${t("chapter")}: <b>${esc(it.chapter)}</b>`:""}
+        ${it.size?`· ${t("size")}: ${esc(it.size)}`:""}${it.duration?`· ${t("dur")}: ${esc(it.duration)}`:""}${it.date?`· ${t("date")}: ${esc(it.date)}`:""}
+      </div>
+      <div class="acts" style="display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.9rem">
+        ${isFile(it)?`<a class="btn dl" href="${esc(it.url)}" download>⬇ ${t("download")} (${esc(t("fmt_"+f))})</a>`:""}
+        <button class="btn" id="doneBtn">${done.has(it.id)?t("done"):t("markDone")}</button>
+        <button class="btn" id="favBtn">${favs.has(it.id)?"★":"☆"} ${t("navFav")}</button>
+        <button class="btn" id="shareBtn">${t("share")}</button>
+        <button class="btn" onclick="window.print()">${t("print")}</button>
+      </div>
+    </div>
+    ${media}
+    ${it.body?`<article class="lesson" lang="${esc(it.lang||"ar")}" dir="${(it.lang||"ar")==="ar"?"rtl":"ltr"}">${it.body}</article>`:""}
+    ${hasSol(it)?`<div class="solwrap">
+      <button class="btn pri" id="solBtn" aria-expanded="${openSol?"true":"false"}">${openSol?t("hideSol"):t("showSol")}</button>
+      <div class="solbody ${openSol?"open":""}" id="solBody">
+        ${it.solution?`<article class="lesson" lang="${esc(it.lang||"ar")}" dir="${(it.lang||"ar")==="ar"?"rtl":"ltr"}"><h3 style="margin-top:0">✓ ${t("solTitle")}</h3>${it.solution}</article>`:""}
+        ${it.solutionUrl?`<div class="bigext"><div class="big">✅</div><a class="btn pri" href="${esc(it.solutionUrl)}" download>${t("dlSol")}</a><a class="btn" href="${esc(it.solutionUrl)}" target="_blank" rel="noopener">${t("open")}</a></div>`:""}
+      </div></div>`:""}
+    ${related.length?`<div class="related"><h2 class="sec">${t("related")}</h2><div class="grid">${related.map(cardHTML).join("")}</div></div>`:""}
+    <p class="no-print" style="margin-top:1.4rem"><a class="btn" href="#/library">${t("back")}</a></p>
+  </main>`;
+}
+
+function viewFavorites(){
+  const list=DB.items.filter(i=>favs.has(i.id));
+  return `<main class="wrap"><h2 class="sec">${t("favT")}</h2>
+  ${list.length?`<p style="color:var(--muted)">${done.size} ${t("progDone")} ${DB.items.length}</p><div class="grid">${list.map(cardHTML).join("")}</div>`
+  :`<div class="empty"><div class="big">⭐</div><p>${t("favEmpty")}</p></div>`}</main>`;
+}
+
+function viewTips(){
+  return `<main class="wrap">
+  <h2 class="sec">${t("tipsT")}</h2>
+  <div class="grid">${TIPS[LANG].map(x=>`<div class="tip"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p></div>`).join("")}</div>
+  <h2 class="sec">${t("sitesT")}</h2>
+  <p style="color:var(--muted)">${t("sitesP")}</p>
+  <div class="tablewrap"><table class="cmp"><thead><tr><th>${t("colSite")}</th><th>${t("colUse")}</th><th>${t("colIdea")}</th></tr></thead>
+  <tbody>${SITES.map(s=>`<tr><td><a href="${esc(s[1])}" target="_blank" rel="noopener"><b>${esc(s[0])}</b></a></td><td>${esc(s[2][LANG]||s[2].fr)}</td><td>${esc(s[3][LANG]||s[3].fr)}</td></tr>`).join("")}</tbody></table></div>
+  </main>`;
+}
+
+/* ================= Routeur ================= */
+function render(){
+  if(!DB)return;
+  const {parts,params}=parseHash();
+  const route=parts[0]||"";
+  $$("nav.main a").forEach(a=>a.classList.toggle("on",a.dataset.nav===(route||"home")));
+  const app=$("#app");
+  if(route===""||route==="home"){
+    app.innerHTML=viewHome();bindFavs(app);
+    const f=$("#homeSearch");
+    if(f)f.onsubmit=e=>{e.preventDefault();location.hash="#/library?q="+encodeURIComponent($("#hs").value.trim())};
+  }else if(route==="library"){
+    app.innerHTML=viewLibrary(params);
+    const form=$("#filters"),box=$("#libResults");
+    const upd=()=>{const p=new URLSearchParams(new FormData(form));for(const[k,v]of[...p])if(!v)p.delete(k);box.innerHTML=resultsHTML(filterItems(p));bindFavs(box);history.replaceState(null,"","#/library"+(p.toString()?"?"+p:""))};
+    form.addEventListener("input",upd);form.addEventListener("change",upd);form.onsubmit=e=>e.preventDefault();
+    $("#resetF").onclick=()=>{form.reset();upd()};
+    box.innerHTML=resultsHTML(filterItems(params));bindFavs(box);
+  }else if(route==="item"&&parts[1]){
+    const it=DB.items.find(x=>x.id===decodeURIComponent(parts[1]));
+    if(!it){app.innerHTML=viewLibrary(params);render();return}
+    app.innerHTML=viewItem(it,params.get("sol")==="1");bindFavs(app);
+    const sb=$("#solBtn");
+    if(sb)sb.onclick=()=>{const b=$("#solBody");const open=b.classList.toggle("open");sb.textContent=open?t("hideSol"):t("showSol");sb.setAttribute("aria-expanded",open)};
+    const db2=$("#doneBtn");
+    if(db2)db2.onclick=()=>{done.has(it.id)?done.delete(it.id):done.add(it.id);saveSets();db2.textContent=done.has(it.id)?t("done"):t("markDone")};
+    const fb=$("#favBtn");
+    if(fb)fb.onclick=()=>{if(favs.has(it.id)){favs.delete(it.id);toast(t("favDel"))}else{favs.add(it.id);toast(t("favAdd"))}saveSets();fb.textContent=(favs.has(it.id)?"★":"☆")+" "+t("navFav")};
+    const sh=$("#shareBtn");
+    if(sh)sh.onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast(t("copied"))}catch(e){prompt("",location.href)}};
+  }else if(route==="favorites"){
+    app.innerHTML=viewFavorites();bindFavs(app);
+  }else if(route==="tips"){
+    app.innerHTML=viewTips();
+  }else{
+    app.innerHTML=viewHome();bindFavs(app);
+  }
+  window.scrollTo({top:0});
+}
+addEventListener("hashchange",render);
+
+/* ================= Démarrage ================= */
+applyTheme();applyLang();
+fetch("data/content.json?t="+Date.now())
+  .then(r=>{if(!r.ok)throw new Error(r.status);return r.json()})
+  .then(db=>{DB=db;render()})
+  .catch(()=>{$("#app").innerHTML=`<main class="wrap"><div class="empty"><div class="big">⚠️</div><p>${t("errLoad")}</p></div></main>`});
+</script>
+</body>
+</html>
